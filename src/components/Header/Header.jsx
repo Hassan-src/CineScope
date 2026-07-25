@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import Button from "./Button";
+import Button from "../Button/Button";
 function Navbar() {
   return (
     <header className={styles.header}>
