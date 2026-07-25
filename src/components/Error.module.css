@@ -1,0 +1,35 @@
+.error {
+  width: 600px;
+  height: 300px;
+  margin: auto;
+  border: 3px solid #8c1717;
+  border-radius: var(--border-radius);
+  background: #3d0a0a;
+  img {
+    width: 40px;
+  }
+  p {
+    margin: var(--spacing-lg);
+    font-size: 1rem;
+    color: #f8fafc;
+    text-align: center;
+  }
+  .errorLogo {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: var(--spacing-sm) 0;
+    border-bottom: 1px solid #8c1717;
+    span {
+      color: #dc2626;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: var(--text-letter-spacing);
+      font-family: var(--heading-font-family);
+      margin-top: var(--spacing-xsm);
+    }
+  }
+}

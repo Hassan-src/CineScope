@@ -1,0 +1,60 @@
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm)
+    var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  .searchbox {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      width: 700px;
+      height: 2.2rem;
+      padding: var(--spacing-xsm);
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      background-image: url("../public/svgs/search.svg");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 10px center;
+      padding-left: 40px;
+    }
+  }
+}
+.cinescope {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .cinescopelogo {
+    width: 50px;
+    height: 100%;
+  }
+  .cinescopetext {
+    width: 120px;
+    padding-left: var(--spacing-sm);
+  }
+}
+.btnlogin {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: transparent;
+  font-size: 1rem;
+  img {
+    width: 25px;
+    margin-right: var(--spacing-sm);
+  }
+}

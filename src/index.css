@@ -1,0 +1,127 @@
+:root {
+  /* ===========
+        Text 
+     ===========*/
+  --heading-font-family: "Inter", sans-serif;
+  --body-font-family: "Space Grotesk", sans-serif;
+  --h1-text-size: 3.5rem;
+  --h1-text-weight: 700;
+  --h2-text-size: 3rem;
+  --h2-text-weight: 600;
+  --h3-text-size: 2.5rem;
+  --h3-text-weight: 500;
+  --p-text-size: 1.5rem;
+  --p-text-weight: 400;
+  --headers-letter-spacing: 3px;
+  --text-letter-spacing: 2px;
+  /* ===========
+      Spacing 
+     ===========*/
+  --spacing-xsm: 0.2rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xlg: 3rem;
+  /* ===========
+      Coloring 
+     ===========*/
+  --bg-color: #0b1220;
+  --surface-color: #151b2d;
+  --surface-hover-color: #1e293b;
+  /* text coloring */
+  --text-color: #f8fafc;
+  --text-secondary-color: #94a3b8;
+  /* primary & accent */
+  --primary-color: #3b82f6;
+  --accent-color: #fbbf24;
+  /* border color */
+  --border-color: #263041;
+  /* border radius */
+  --border-radius: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #0b1220;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, var(--p-text-size));
+  font-weight: var(--p-text-weight);
+  letter-spacing: var(--text-letter-spacing);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font-family);
+  letter-spacing: var(--headers-letter-spacing);
+  text-transform: capitalize;
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw, var(--h1-text-size));
+  font-weight: var(--h1-text-weight);
+}
+h2 {
+  font-size: clamp(2rem, 5vw, var(--h2-text-size));
+  font-weight: var(--h2-text-weight);
+}
+h3 {
+  font-size: clamp(1.5rem, 5vw, var(--h3-text-size));
+  font-weight: var(--h3-text-weight);
+}
+input {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  outline: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  letter-spacing: var(--text-letter-spacing);
+}
+button {
+  border: none;
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: var(--text-letter-spacing);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  border-radius: 12px;
+  transition: 0.2s ease;
+
+  &:hover {
+    background: #2563eb;
+    box-shadow: 0px 0px 22px -4px rgb(37, 99, 235);
+    cursor: pointer;
+  }
+  &:active {
+    background: #1d4ed8;
+  }
+}
+ul,
+li,
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
+  letter-spacing: var(--text-letter-spacing);
+  color: var(--text-color);
+}
