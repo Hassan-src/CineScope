@@ -11,14 +11,16 @@ function Categories({ condition, catBtn, setCatBtn }) {
     <ul className={styles.categories}>
       <li>
         <Button onClick={handleCatBtn} className={styles.sidebarbtn}>
-          <img src="../svgs/cropped-film.svg" alt="Film" />
+          <img src="src/assets/svgs/cropped-film.svg" alt="Film" />
           {condition && (
             <>
               <p>categories</p>
               <img
                 className={styles.arrows}
                 src={
-                  catBtn ? "../svgs/Arrow-down.svg" : "../svgs/Arrow-right.svg"
+                  catBtn
+                    ? "src/assets/svgs/Arrow-down.svg"
+                    : "src/assets/svgs/Arrow-right.svg"
                 }
                 alt="arrow"
               />
@@ -32,7 +34,7 @@ function Categories({ condition, catBtn, setCatBtn }) {
                 <NavLink to={"movies"}>movies</NavLink>
                 <img
                   className={styles.arrows}
-                  src="../svgs/Arrow-right.svg"
+                  src="src/assets/svgs/Arrow-right.svg"
                   alt="arrow"
                 />
               </div>
@@ -42,7 +44,7 @@ function Categories({ condition, catBtn, setCatBtn }) {
                 <NavLink to={"series"}>series</NavLink>
                 <img
                   className={styles.arrows}
-                  src="../svgs/Arrow-right.svg"
+                  src="src/assets/svgs/Arrow-right.svg"
                   alt="arrow"
                 />
               </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import Header from "../../components/Header/Header";
 import SideBar from "../../components/Sidebar/SideBar";
-import Data from "../../components/Data/Data";
+import Hero from "../../components/Hero/Hero";
 
 function Homepage() {
   return (
@@ -11,7 +11,7 @@ function Homepage() {
       <Header />
       <main className={styles.main}>
         <SideBar />
-        <div></div>
+        <Hero />
       </main>
     </>
   );

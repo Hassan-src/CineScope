@@ -2,12 +2,12 @@
   width: fit-content;
   height: 100%;
   border-right: 3px solid var(--border-color);
+  background: var(--bg-color);
   padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   transition: all 0.2s ease;
-  position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 1;
   &:hover {
     background: var(--surface-hover-color);
   }
@@ -21,20 +21,14 @@
     }
     div {
       width: 100%;
-      padding: var(--spacing-sm);
+
       display: flex;
       align-items: center;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-      &:hover {
-        box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
-        background: #2563eb;
-        cursor: pointer;
-      }
+      justify-content: center;
     }
   }
   li {
-    padding: var(--spacing-sm) 0;
+    margin: var(--spacing-sm) 0;
   }
   img {
     width: 25px;
@@ -47,7 +41,7 @@
   }
   .sidebarbtn {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
     background: transparent;
     padding: var(--spacing-sm);
     &:hover {
@@ -78,13 +72,16 @@
   .user,
   .categories {
     .category {
-      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      position: relative;
+      border-radius: 12px;
+      padding: var(--spacing-sm);
       margin-left: var(--spacing-lg);
       &:hover {
         border-color: var(--border-color);
-      }
-      &:last-child {
-        border: none;
+        box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
+        background: #2563eb;
+        cursor: pointer;
       }
     }
     .categoryimg {
@@ -96,9 +93,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin: 0 var(--spacing-md) var(--spacing-md) 0;
+    justify-content: center;
+    margin: auto var(--spacing-md) var(--spacing-md) 0;
     p {
       font-size: 0.8rem;
     }

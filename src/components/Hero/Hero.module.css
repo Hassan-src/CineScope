@@ -1,0 +1,47 @@
+.hero {
+  border: 3px solid red;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  .backPoster {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    filter: blur(4px);
+    object-fit: cover;
+    object-position: top center;
+  }
+  .leftBtn {
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    &:hover {
+      background: rgba(30, 41, 59, 0.2);
+    }
+  }
+  .rightBtn {
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    &:hover {
+      background: rgba(30, 41, 59, 0.2);
+    }
+  }
+}

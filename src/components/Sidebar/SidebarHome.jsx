@@ -7,14 +7,18 @@ function SidebarHome({ condition }) {
     <ul className={styles.home}>
       <li>
         <div>
-          <img src="../svgs/Home.svg" alt="Home" />
-          <NavLink to={"/"}>{condition && <p>home</p>}</NavLink>
+          <img src="src/assets/svgs/Home.svg" alt="Home" />
           {condition && (
-            <img
-              className={styles.arrows}
-              src="../svgs/Arrow-right.svg"
-              alt="arrow"
-            />
+            <>
+              <NavLink to={"/"}>
+                <p>home</p>
+              </NavLink>
+              <img
+                className={styles.arrows}
+                src="src/assets/svgs/Arrow-right.svg"
+                alt="arrow"
+              />
+            </>
           )}
         </div>
       </li>
