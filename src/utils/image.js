@@ -2,7 +2,7 @@
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
 
-export function getImageUrl(path, size = "w500") {
+export function getImageUrl(path, size) {
   if (!path) return "";
   return `${IMAGE_BASE_URL}${size}${path}`;
 }

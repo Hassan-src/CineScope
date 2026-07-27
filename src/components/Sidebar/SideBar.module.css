@@ -45,8 +45,8 @@
     background: transparent;
     padding: var(--spacing-sm);
     &:hover {
-      box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
-      background: #2563eb;
+      box-shadow: 0px 0px 13px 2px var(--btn-hover-shadow-color);
+      background: var(--btn-hover-color);
     }
     p {
       margin-right: var(--spacing-xlg);
@@ -58,8 +58,8 @@
       padding: var(--spacing-sm);
       transition: 0.2s ease;
       &:hover {
-        box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
-        background: #2563eb;
+        box-shadow: 0px 0px 13px 2px var(--btn-hover-shadow-color);
+        background: var(--btn-hover-color);
         cursor: pointer;
       }
     }
@@ -79,8 +79,8 @@
       margin-left: var(--spacing-lg);
       &:hover {
         border-color: var(--border-color);
-        box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
-        background: #2563eb;
+        box-shadow: 0px 0px 13px 2px var(--btn-hover-shadow-color);
+        background: var(--btn-hover-color);
         cursor: pointer;
       }
     }
@@ -106,8 +106,8 @@
       border-radius: 12px;
       transition: all 0.2s ease;
       &:hover {
-        box-shadow: 0px 0px 13px 2px rgb(37, 99, 235);
-        background: #2563eb;
+        box-shadow: 0px 0px 13px 2px var(--btn-hover-shadow-color);
+        background: var(--btn-hover-color);
         cursor: pointer;
       }
     }

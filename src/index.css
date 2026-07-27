@@ -34,6 +34,9 @@
   /* primary & accent */
   --primary-color: #3b82f6;
   --accent-color: #fbbf24;
+  /* Button hover color */
+  --btn-hover-color: #2563eb;
+  --btn-hover-shadow-color: rgb(37, 99, 235);
   /* border color */
   --border-color: #263041;
   /* border radius */

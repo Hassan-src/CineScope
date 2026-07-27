@@ -3,18 +3,18 @@ import { getTrendingDaily } from "../services/api";
 // Getting the Daily movie trend from the API
 function useTrendingDaily() {
   const [trendingDaily, setTrendingDaily] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   useEffect(function () {
     async function loadTrending() {
-      setIsLoading(true);
+      setLoading(true);
       const data = await getTrendingDaily();
       // Getting the data and slice it to only 6 children
       setTrendingDaily(data.results.slice(0, 6));
-      setIsLoading(false);
+      setLoading(false);
     }
     loadTrending();
   }, []);
-  return { trendingDaily, isLoading };
+  return { trendingDaily, loading };
 }
 
 export default useTrendingDaily;

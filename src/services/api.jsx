@@ -24,3 +24,11 @@ export function getPopularMovies() {
 export function getTopRatedMovies() {
   return fetchMovie("/movie/top_rated");
 }
+
+export function getCredits(movie_id) {
+  return fetchMovie(`/movie/${movie_id}/credits`);
+}
+
+export function getMovieDetails(movie_id) {
+  return fetchMovie(`/movie/${movie_id}`);
+}
