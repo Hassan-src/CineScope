@@ -3,6 +3,7 @@ import { getMovieDetails } from "../services/api";
 
 function useMovieDetails(movie_id) {
   const [detail, setDetail] = useState([]);
+  const [genres, setGenres] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(
     function () {
@@ -11,6 +12,7 @@ function useMovieDetails(movie_id) {
         setLoading(true);
         const data = await getMovieDetails(movie_id);
         setDetail(data);
+        setGenres(data.genres);
         setLoading(false);
       }
       fetchDetails();
@@ -18,7 +20,7 @@ function useMovieDetails(movie_id) {
     [movie_id],
   );
 
-  return { detail, loading };
+  return { detail, genres, loading };
 }
 
 export default useMovieDetails;

@@ -12,8 +12,8 @@
   --h3-text-weight: 500;
   --p-text-size: 1.2rem;
   --p-text-weight: 400;
-  --headers-letter-spacing: 3px;
-  --text-letter-spacing: 2px;
+  --headers-letter-spacing: 2px;
+  --text-letter-spacing: 1px;
   /* ===========
       Spacing 
      ===========*/
@@ -111,8 +111,8 @@ button {
   transition: 0.2s ease;
 
   &:hover {
-    background: #2563eb;
-    box-shadow: 0px 0px 22px -4px rgb(37, 99, 235);
+    background: var(--btn-hover-color);
+    box-shadow: 0px 0px 22px -4px var(--btn-hover-shadow-color);
     cursor: pointer;
   }
   &:active {

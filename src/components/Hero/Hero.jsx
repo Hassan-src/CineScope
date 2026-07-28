@@ -5,11 +5,16 @@ import Button from "../Button/Button";
 import styles from "./Hero.module.css";
 import useMovieCredits from "../../Hooks/useMovieCredits";
 import useMovieDetails from "../../Hooks/useMovieDetails";
-import TextExpander from "../TextExpander/textExpander";
+import MovieDetails from "./MovieDetails";
+import MovieTitle from "./MovieTitle";
+import DetailsList from "./DetailsList";
+import Casts from "./Casts";
+import Overview from "./Overview";
+import Ratings from "./Ratings";
 
 function Hero() {
   // Getting the loading value and the API array from the custom hook
-  const { loading, trendingDaily } = useTrendingDaily();
+  const { loading: trendingDailyLoading, trendingDaily } = useTrendingDaily();
   // Setting the starter movie (0 is the first element of the array)
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trendingDaily.length > 0 ? trendingDaily[topMovie] : null;
@@ -20,7 +25,12 @@ function Hero() {
     directors,
     loading: creditsLoading,
   } = useMovieCredits(heroMovie?.id);
-  const { detail, loading: detailsLoading } = useMovieDetails(heroMovie?.id);
+  const {
+    detail,
+    genres,
+    loading: detailsLoading,
+  } = useMovieDetails(heroMovie?.id);
+
   // Updating the index using the modular formula e.g: (0-1) % 5 = -1 => -1 + 5 = 4 => 4 % 5 = 4
   function handleLeftBtn() {
     setTopMovie(
@@ -36,11 +46,11 @@ function Hero() {
         trendingDaily.length,
     );
   }
-  if (loading || !heroMovie) {
+  if (trendingDailyLoading || !heroMovie || detailsLoading) {
     return <div>Loading...</div>;
   }
-  console.log(trendingDaily, actors, detail);
-  // TODO 1.fix the detail background and the showing of it 2.manage the text expander 3.make the bullet point for the number of slides in hero 4.Get the imdb rating from OmdbApi 5.fix the gradient so it blends with the other sections.
+  console.log(detail);
+  // TODO  3.make the bullet point for the number of slides in hero 4.Get the imdb rating from OmdbApi
   return (
     <div className={styles.hero}>
       {heroMovie && (
@@ -53,9 +63,9 @@ function Hero() {
             />
           </Button>
           <img
-            className={styles.backPoster}
-            // The w is set according to the API documentation for images
+            // The size is set according to the API documentation for images
             src={getImageUrl(heroMovie.backdrop_path, "original")}
+            className={styles.backPoster}
             alt={`${heroMovie.original_title} poster`}
           />
           <Button className={styles.rightBtn} onClick={handleRightBtn}>
@@ -65,59 +75,18 @@ function Hero() {
               alt="left button"
             />
           </Button>
-          <div className={styles.movieDetail}>
-            <img
-              className={styles.moviePoster}
-              src={getImageUrl(heroMovie.poster_path, "original")}
-              alt={`${heroMovie.original_title} poster`}
-            />
-            <div className={styles.description}>
-              <h2 className={styles.title}>
-                {heroMovie.original_title || heroMovie.original_name}
-              </h2>
-              <ul className={styles.detailList}>
-                <li className={styles.smallDet}>
-                  <img
-                    className={styles.heroImages}
-                    src="src/assets/svgs/Date.svg"
-                    alt="date"
-                  />
-                  {heroMovie.release_date || heroMovie.first_air_date}
-                </li>
-                <li className={styles.smallDet}>
-                  <img
-                    className={styles.heroImages}
-                    src="src/assets/svgs/Rate.svg"
-                    alt=""
-                  />
-                  TMDB: {Math.trunc(heroMovie.vote_average)}
-                </li>
-                <li className={styles.smallDet}>
-                  <img
-                    className={styles.heroImages}
-                    src="src/assets/svgs/Duration.svg"
-                    alt=""
-                  />
-                  {detail.runtime}min
-                </li>
-              </ul>
-              <p>
-                <span className={styles.casts}>Casts:</span>{" "}
-                {actors.map((actor) => actor.name).join("- ")}
-              </p>
-              <p>Directors: {directors.map((dir) => dir.name).join(", ")}</p>
-              <p className={styles.summary}>
-                <TextExpander
-                  collapsedNumWords={15}
-                  expandButtonText="more"
-                  collapseButtonText="less"
-                  buttonColor="#3b82f6"
-                  expanded={false}
-                >
-                  {heroMovie.overview}
-                </TextExpander>
-              </p>
-            </div>
+          <div className={styles.about}>
+            <MovieDetails heroMovie={heroMovie}>
+              <MovieTitle heroMovie={heroMovie} />
+              <DetailsList
+                heroMovie={heroMovie}
+                detail={detail}
+                genres={genres}
+              />
+              <Ratings detail={detail} />
+              <Casts actors={actors} directors={directors} />
+            </MovieDetails>
+            <Overview>{heroMovie.overview}</Overview>
           </div>
         </>
       )}

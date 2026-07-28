@@ -1,0 +1,31 @@
+.detailList {
+  display: flex;
+  align-items: center;
+}
+.detailImages {
+  width: clamp(12px, 2vw, 16px);
+  margin-right: var(--spacing-sm);
+}
+.smallDet {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md) 0 0;
+  font-size: clamp(0.6rem, 1vw, 0.8rem);
+  &:not(:last-child)::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-left: var(--spacing-md);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    filter: drop-shadow(0 0 0.3rem var(--btn-hover-shadow-color));
+  }
+}
+.genre {
+  &:not(:last-child)::after {
+    content: "";
+    margin: var(--spacing-sm);
+    border-right: 1px dashed var(--primary-color);
+    filter: drop-shadow(0 0 0.3rem var(--btn-hover-shadow-color));
+  }
+}

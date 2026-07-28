@@ -1,5 +1,5 @@
 import styles from "./Error.module.css";
-
+// Custom Error message
 function Error({ message }) {
   return (
     <div className={styles.error}>

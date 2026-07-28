@@ -1,0 +1,14 @@
+.casts {
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+.castNames {
+  &:not(:last-child)::after {
+    content: "";
+    margin: var(--spacing-md);
+    border-right: 1px dashed var(--primary-color);
+    filter: drop-shadow(0 0 0.3rem var(--btn-hover-shadow-color));
+  }
+}
+.topic {
+  display: block;
+}

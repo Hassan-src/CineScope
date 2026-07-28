@@ -12,8 +12,10 @@ function useMovieCredits(movie_id) {
       async function fetchCredits() {
         setLoading(true);
         const data = await getCredits(movie_id);
-        setActors(data.cast.slice(0, 7));
-        setDirectors(data.crew.filter((dir) => dir.department === "Directing"));
+        setActors(data.cast.slice(0, 5));
+        setDirectors(
+          data.crew.filter((dir) => dir.department === "Directing").slice(0, 3),
+        );
         setLoading(false);
       }
       fetchCredits();
