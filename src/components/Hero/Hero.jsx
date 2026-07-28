@@ -50,7 +50,7 @@ function Hero() {
     return <div>Loading...</div>;
   }
   console.log(detail);
-  // TODO  3.make the bullet point for the number of slides in hero 4.Get the imdb rating from OmdbApi
+  // TODO  3.make the bullet point for the number of slides in hero
   return (
     <div className={styles.hero}>
       {heroMovie && (
