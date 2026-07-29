@@ -1,5 +1,9 @@
+import CustomError from "../Error/CustomError";
+import DetailSkeleton from "../Loading/Skeleton/detailSkeleton";
 import styles from "./Casts.module.css";
-function Casts({ actors, directors }) {
+function Casts({ actors, directors, creditsLoading, creditsError }) {
+  if (creditsLoading) return <DetailSkeleton />;
+  if (creditsError) return <CustomError message={creditsError} />;
   // Actors and directors from Tmdb api
   return (
     <>

@@ -1,6 +1,10 @@
 import { getImageUrl } from "../../utils/image";
+import CustomError from "../Error/CustomError";
+import DetailSkeleton from "../Loading/Skeleton/detailSkeleton";
 import styles from "./MovieDetails.module.css";
-function MovieDetails({ children, heroMovie }) {
+function MovieDetails({ children, heroMovie, detailsLoading, detailsError }) {
+  if (detailsLoading) return <DetailSkeleton />;
+  if (detailsError) return <CustomError message={detailsError} />;
   return (
     <div className={styles.movieDetail}>
       <img

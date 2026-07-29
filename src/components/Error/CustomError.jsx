@@ -1,10 +1,11 @@
 import styles from "./Error.module.css";
 // Custom Error message
-function Error({ message }) {
+function CustomError({ message }) {
+  console.log(message);
   return (
     <div className={styles.error}>
       <div className={styles.errorLogo}>
-        <img src="../public/svgs/Error.svg" alt="error" />
+        <img src="src/assets/svgs/Error.svg" alt="error" />
         <span>Error!</span>
       </div>
       <p>{message}</p>
@@ -12,4 +13,4 @@ function Error({ message }) {
   );
 }
 
-export default Error;
+export default CustomError;

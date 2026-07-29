@@ -12,6 +12,7 @@ const OMDB_API_BASE_URL = `https://www.omdbapi.com/?apikey=${import.meta.env.VIT
 async function fetchImdbRating(endpoint) {
   const response = await fetch(`${OMDB_API_BASE_URL}${endpoint}`);
   const data = await response.json();
+  if (!response.ok) throw new Error(data.status_message);
   return data;
 }
 // Fetching from Tmdb api

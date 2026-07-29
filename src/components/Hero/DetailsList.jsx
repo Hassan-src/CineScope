@@ -1,5 +1,15 @@
+import CustomError from "../Error/CustomError";
+import DetailSkeleton from "../Loading/Skeleton/detailSkeleton";
 import styles from "./DetailsList.module.css";
-function DetailsList({ heroMovie, detail, genres }) {
+function DetailsList({
+  heroMovie,
+  detail,
+  genres,
+  detailsLoading,
+  detailsError,
+}) {
+  if (detailsLoading) return <DetailSkeleton />;
+  if (detailsError) return <CustomError message={detailsError} />;
   // Including the runtime, release date and genre from Tmdb api
   return (
     <ul className={styles.detailList}>
@@ -9,7 +19,7 @@ function DetailsList({ heroMovie, detail, genres }) {
           src="src/assets/svgs/Date.svg"
           alt="date"
         />
-        {heroMovie.release_date || heroMovie.first_air_date}
+        {heroMovie?.release_date || heroMovie?.first_air_date}
       </li>
       <li className={styles.smallDet}>
         <img
@@ -17,7 +27,7 @@ function DetailsList({ heroMovie, detail, genres }) {
           src="src/assets/svgs/Duration.svg"
           alt=""
         />
-        {detail.runtime}min
+        {detail?.runtime}min
       </li>
       <li className={styles.smallDet}>
         <img
@@ -27,7 +37,7 @@ function DetailsList({ heroMovie, detail, genres }) {
         />
         {genres.map((genre) => (
           <span key={genre.id} className={styles.genre}>
-            {genre.name}
+            {genre?.name}
           </span>
         ))}
       </li>

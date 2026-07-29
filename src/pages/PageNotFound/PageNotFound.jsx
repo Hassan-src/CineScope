@@ -1,7 +1,7 @@
-import Error from "../../components/Error/Error";
+import CustomError from "../../components/Error/CustomError";
 
 function PageNotFound() {
-  return <Error message={"Page not found"} />;
+  return <CustomError message={"Page not found"} />;
 }
 
 export default PageNotFound;

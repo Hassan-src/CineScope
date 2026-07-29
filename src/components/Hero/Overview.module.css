@@ -1,6 +1,6 @@
 .summary {
   font-size: clamp(0.7rem, 2vw, 0.9rem);
-  padding: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-md);
   .overview {
     font-size: 0.85rem;
     text-transform: uppercase;
