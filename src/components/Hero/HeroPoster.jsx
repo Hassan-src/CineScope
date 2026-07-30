@@ -3,6 +3,8 @@ import Button from "../Button/Button";
 import CustomError from "../Error/CustomError";
 import HeroSkeleton from "../Loading/Skeleton/Hero/HeroSkeleton";
 import styles from "./HeroPoster.module.css";
+import arrownarrowleft from "../../assets/arrow-narrow-left.svg";
+import arrownarrowright from "../../assets/arrow-narrow-right.svg";
 function HeroPoster({
   heroMovie,
   trendingDaily,
@@ -32,11 +34,7 @@ function HeroPoster({
   return (
     <>
       <Button className={styles.leftBtn} onClick={handleLeftBtn}>
-        <img
-          className={styles.arrow}
-          src="../../assets/arrow-narrow-left.svg"
-          alt="left button"
-        />
+        <img className={styles.arrow} src={arrownarrowleft} alt="left button" />
       </Button>
       <img
         // The size is set according to the API documentation for images
@@ -47,7 +45,7 @@ function HeroPoster({
       <Button className={styles.rightBtn} onClick={handleRightBtn}>
         <img
           className={styles.arrow}
-          src="../../assets/arrow-narrow-right.svg"
+          src={arrownarrowright}
           alt="left button"
         />
       </Button>

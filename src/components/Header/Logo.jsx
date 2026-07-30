@@ -1,15 +1,17 @@
 import styles from "./logo.module.css";
+import Cinescopelogo from "../../assets/Cinescope-logo.svg";
+import Cinescope from "../../assets/Cinescope.svg";
 function Logo() {
   return (
     <div className={styles.cinescope}>
       <img
         className={styles.cinescopelogo}
-        src="../../assets/Cinescope-logo.svg"
+        src={Cinescopelogo}
         alt="cinescopeLogo"
       />
       <img
         className={styles.cinescopetext}
-        src="../../assets/Cinescope.svg"
+        src={Cinescope}
         alt="cinescopeLogo"
       />
     </div>

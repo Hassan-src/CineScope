@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import TrailerModal from "../TrailerModal/TrailerModal";
 import styles from "./MoviesOptions.module.css";
 import useMovieTrailer from "../../Hooks/useMovieTrailer";
+import logo from "../../assets/bookmark.svg";
 function MoviesOptions({ heroMovie }) {
   const [show, setShow] = useState(false);
   const {
@@ -32,7 +33,7 @@ function MoviesOptions({ heroMovie }) {
         />
       )}
       <Button className={styles.btnBookmark}>
-        <img src="../../assets/bookmark.svg" alt="bookmark" />
+        <img src={logo} alt="bookmark" />
         Mylist
       </Button>
     </div>

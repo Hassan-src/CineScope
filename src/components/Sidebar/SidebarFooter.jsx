@@ -1,4 +1,5 @@
 import styles from "./SideBar.module.css";
+import receipt from "../../assets/receipt.svg";
 function SideBarFooter({ condition }) {
   return (
     <div className={styles.footer}>
@@ -8,7 +9,7 @@ function SideBarFooter({ condition }) {
         rel="noopener noreferrer"
       >
         <div>
-          <img src="../../assets/receipt.svg" alt="credit" />
+          <img src={receipt} alt="credit" />
           {condition && <p>API credit: TMDB</p>}
         </div>
       </a>
