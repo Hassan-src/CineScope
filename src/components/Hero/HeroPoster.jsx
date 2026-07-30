@@ -34,7 +34,7 @@ function HeroPoster({
       <Button className={styles.leftBtn} onClick={handleLeftBtn}>
         <img
           className={styles.arrow}
-          src="src/assets/svgs/arrow-narrow-left.svg"
+          src="../../assets/arrow-narrow-left.svg"
           alt="left button"
         />
       </Button>
@@ -47,7 +47,7 @@ function HeroPoster({
       <Button className={styles.rightBtn} onClick={handleRightBtn}>
         <img
           className={styles.arrow}
-          src="src/assets/svgs/arrow-narrow-right.svg"
+          src="../../assets/arrow-narrow-right.svg"
           alt="left button"
         />
       </Button>

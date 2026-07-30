@@ -4,12 +4,12 @@ function Logo() {
     <div className={styles.cinescope}>
       <img
         className={styles.cinescopelogo}
-        src="src/assets/svgs/Cinescope-logo.svg"
+        src="../../assets/Cinescope-logo.svg"
         alt="cinescopeLogo"
       />
       <img
         className={styles.cinescopetext}
-        src="src/assets/svgs/Cinescope.svg"
+        src="../../assets/Cinescope.svg"
         alt="cinescopeLogo"
       />
     </div>

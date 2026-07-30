@@ -13,7 +13,7 @@ function UserOption({ condition, userBtn, setUserBtn }) {
         <Button onClick={handleUserBtn} className={styles.sidebarbtn}>
           <img
             className={styles.userimg}
-            src="src/assets/svgs/UserBook.svg"
+            src="../../assets/UserBook.svg"
             alt="User"
           />
           {condition && (
@@ -23,8 +23,8 @@ function UserOption({ condition, userBtn, setUserBtn }) {
                 className={styles.arrows}
                 src={
                   userBtn
-                    ? "src/assets/svgs/Arrow-down.svg"
-                    : "src/assets/svgs/Arrow-right.svg"
+                    ? "../../assets/Arrow-down.svg"
+                    : "../../assets/Arrow-right.svg"
                 }
                 alt="arrow"
               />
@@ -36,26 +36,26 @@ function UserOption({ condition, userBtn, setUserBtn }) {
             <li className={styles.category}>
               <img
                 className={styles.categoryimg}
-                src={"src/assets/svgs/Bookmark.svg"}
+                src={"../../assets/Bookmark.svg"}
                 alt={"bookmark"}
               />
               <NavLink to={"bookmarks"}>Bookmarks</NavLink>
               <img
                 className={styles.arrows}
-                src="src/assets/svgs/Arrow-right.svg"
+                src="../../assets/Arrow-right.svg"
                 alt="arrow"
               />
             </li>
             <li className={styles.category}>
               <img
                 className={styles.categoryimg}
-                src="src/assets/svgs/power-off.svg"
+                src="../../assets/power-off.svg"
                 alt="logout"
               />
               <NavLink to={"logIn"}>LogOut</NavLink>
               <img
                 className={styles.arrows}
-                src="src/assets/svgs/Arrow-right.svg"
+                src="../../assets/Arrow-right.svg"
                 alt="arrow"
               />
             </li>

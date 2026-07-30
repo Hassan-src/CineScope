@@ -16,7 +16,7 @@ function AboutList({
       <li className={styles.smallDet}>
         <img
           className={styles.detailImages}
-          src="src/assets/svgs/Date.svg"
+          src="../../assets/Date.svg"
           alt="date"
         />
         {heroMovie?.release_date || heroMovie?.first_air_date}
@@ -24,7 +24,7 @@ function AboutList({
       <li className={styles.smallDet}>
         <img
           className={styles.detailImages}
-          src="src/assets/svgs/Duration.svg"
+          src="../../assets/Duration.svg"
           alt=""
         />
         {detail?.runtime}min
@@ -32,7 +32,7 @@ function AboutList({
       <li className={styles.smallDet}>
         <img
           className={styles.detailImages}
-          src="src/assets/svgs/camcorder.svg"
+          src="../../assets/camcorder.svg"
           alt="Genre"
         />
         {genres.map((genre) => (

@@ -17,7 +17,7 @@ function Ratings({ detail, detailsError }) {
         <li className={styles.rate}>
           <img
             className={styles.ratingImg}
-            src="src/assets/svgs/imdb.svg"
+            src="../../assets/imdb.svg"
             alt="imdb logo"
           />
           {imdbRate === "N/A" ? "-" : imdbRate}
@@ -25,7 +25,7 @@ function Ratings({ detail, detailsError }) {
         <li className={styles.rate}>
           <img
             className={styles.ratingImg}
-            src="src/assets/svgs/tomato.svg"
+            src="../../assets/tomato.svg"
             alt="imdb logo"
           />
           {rottenTomato}

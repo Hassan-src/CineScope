@@ -32,7 +32,7 @@ function MoviesOptions({ heroMovie }) {
         />
       )}
       <Button className={styles.btnBookmark}>
-        <img src="src/assets/svgs/bookmark.svg" alt="bookmark" />
+        <img src="../../assets/bookmark.svg" alt="bookmark" />
         Mylist
       </Button>
     </div>

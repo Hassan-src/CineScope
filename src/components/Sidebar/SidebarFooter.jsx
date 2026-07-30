@@ -8,7 +8,7 @@ function SideBarFooter({ condition }) {
         rel="noopener noreferrer"
       >
         <div>
-          <img src="src/assets/svgs/receipt.svg" alt="credit" />
+          <img src="../../assets/receipt.svg" alt="credit" />
           {condition && <p>API credit: TMDB</p>}
         </div>
       </a>
