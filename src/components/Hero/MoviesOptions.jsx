@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import TrailerModal from "../TrailerModal/TrailerModal";
 import styles from "./MoviesOptions.module.css";
 import useMovieTrailer from "../../Hooks/useMovieTrailer";
-import logo from "../../assets/bookmark.svg";
+import logo from "../../assets/Bookmark.svg";
 function MoviesOptions({ heroMovie }) {
   const [show, setShow] = useState(false);
   const {
