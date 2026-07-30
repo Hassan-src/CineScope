@@ -1,7 +1,8 @@
 import Button from "../Button/Button";
+import { createPortal } from "react-dom";
 import styles from "./TrailerModal.module.css";
 function TrailerModal({ title, movieKey, className, onClick }) {
-  return (
+  return createPortal(
     <div className={`${styles.player} ${className}`}>
       <Button onClick={onClick} className={styles.closeTrailer}>
         Close
@@ -15,7 +16,8 @@ function TrailerModal({ title, movieKey, className, onClick }) {
         allowFullScreen
         allow="clipboard-write; encrypted-media; picture-in-picture"
       />
-    </div>
+    </div>,
+    document.body,
   );
 }
 

@@ -4,7 +4,6 @@
   flex: 1;
   display: flex;
   align-items: center;
-  flex-direction: column;
   position: relative;
   min-width: 0;
   overflow: hidden;
@@ -36,8 +35,8 @@
   border-radius: var(--border-radius);
   position: absolute;
   left: 8%;
-  top: 50%;
-  transform: translate(0%, -56%);
+  top: 5%;
+  /* transform: translate(0%, -56%); */
   z-index: 3;
   padding: var(--spacing-lg);
 }
