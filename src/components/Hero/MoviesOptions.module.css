@@ -1,0 +1,46 @@
+.btnInfo {
+  display: flex;
+  padding: 0 0 0 var(--spacing-md);
+  .btnTrailer,
+  .btnBookmark {
+    background: transparent;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-right: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    &:hover {
+      box-shadow: 0 0 10px var(--btn-hover-shadow-color);
+    }
+  }
+  .btnTrailer {
+    background: var(--primary-color);
+  }
+  img {
+    width: 15px;
+    margin-right: var(--spacing-sm);
+  }
+}
+.noTrailer {
+  background-color: transparent;
+  margin-right: var(--spacing-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  &:hover {
+    box-shadow: none;
+    background-color: transparent;
+    cursor: default;
+  }
+}
+.active {
+  animation: modalOpen 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

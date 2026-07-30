@@ -1,17 +1,17 @@
 import { useState } from "react";
 import useTrendingDaily from "../../Hooks/useTrendingDaily";
-import Button from "../Button/Button";
 import styles from "./Hero.module.css";
 import useMovieCredits from "../../Hooks/useMovieCredits";
 import useMovieDetails from "../../Hooks/useMovieDetails";
 import MovieDetails from "./MovieDetails";
 import MovieTitle from "./MovieTitle";
-import DetailsList from "./DetailsList";
+import AboutList from "./AboutList";
 import Casts from "./Casts";
 import Overview from "./Overview";
 import Ratings from "./Ratings";
 import HeroPoster from "./HeroPoster";
 import HeroBulletMenu from "./HeroBulletMenu";
+import MoviesOptions from "./MoviesOptions";
 
 function Hero() {
   // Getting the loading value and the API array from the custom hook
@@ -37,7 +37,7 @@ function Hero() {
     loading: detailsLoading,
     error: detailsError,
   } = useMovieDetails(heroMovie?.id);
-  // TODO fix the skeleton loading for each component 2. fetch the trailer and play it
+
   return (
     <div className={styles.hero}>
       {heroMovie && (
@@ -68,18 +68,14 @@ function Hero() {
                   detailsLoading={detailsLoading}
                   detailsError={detailsError}
                 />
-                <DetailsList
+                <AboutList
                   heroMovie={heroMovie}
                   detail={detail}
                   genres={genres}
                   detailsLoading={detailsLoading}
                   detailsError={detailsError}
                 />
-                <Ratings
-                  detail={detail}
-                  detailsLoading={detailsLoading}
-                  detailsError={detailsError}
-                />
+                <Ratings detail={detail} detailsError={detailsError} />
                 <Casts
                   actors={actors}
                   directors={directors}
@@ -88,13 +84,7 @@ function Hero() {
                 />
               </MovieDetails>
               <Overview>{heroMovie.overview}</Overview>
-              <div className={styles.btnInfo}>
-                <Button className={styles.btnTrailer}>Watch Trailer</Button>
-                <Button className={styles.btnBookmark}>
-                  <img src="src/assets/svgs/bookmark.svg" alt="bookmark" />
-                  Mylist
-                </Button>
-              </div>
+              <MoviesOptions heroMovie={heroMovie} />
             </>
           </div>
         </>

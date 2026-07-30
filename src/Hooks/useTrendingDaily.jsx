@@ -7,8 +7,8 @@ function useTrendingDaily() {
   const [error, setError] = useState(null);
   useEffect(function () {
     async function loadTrending() {
+      setLoading(true);
       try {
-        setLoading(true);
         const data = await getTrendingDaily();
         // Getting the data and slice it to only 6 children
         setTrendingDaily(data.results.slice(0, 6));

@@ -1,14 +1,14 @@
 import CustomError from "../Error/CustomError";
-import DetailSkeleton from "../Loading/Skeleton/detailSkeleton";
-import styles from "./DetailsList.module.css";
-function DetailsList({
+import AboutSkeleton from "../Loading/Skeleton/Hero/AboutSkeleton";
+import styles from "./AboutList.module.css";
+function AboutList({
   heroMovie,
   detail,
   genres,
   detailsLoading,
   detailsError,
 }) {
-  if (detailsLoading) return <DetailSkeleton />;
+  if (detailsLoading) return <AboutSkeleton />;
   if (detailsError) return <CustomError message={detailsError} />;
   // Including the runtime, release date and genre from Tmdb api
   return (
@@ -45,4 +45,4 @@ function DetailsList({
   );
 }
 
-export default DetailsList;
+export default AboutList;

@@ -28,6 +28,13 @@
   --bg-color: #0b1220;
   --surface-color: #151b2d;
   --surface-hover-color: #1e293b;
+  --back-skeleton-linear: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(240, 240, 240, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  --background-skeleton-color: rgba(255, 255, 255, 0.1);
   /* text coloring */
   --text-color: #f8fafc;
   --text-secondary-color: #94a3b8;

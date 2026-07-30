@@ -1,8 +1,7 @@
 .summary {
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
   margin: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-md);
   .overview {
-    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.6;

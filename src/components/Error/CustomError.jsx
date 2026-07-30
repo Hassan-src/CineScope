@@ -1,7 +1,6 @@
 import styles from "./Error.module.css";
 // Custom Error message
 function CustomError({ message }) {
-  console.log(message);
   return (
     <div className={styles.error}>
       <div className={styles.errorLogo}>

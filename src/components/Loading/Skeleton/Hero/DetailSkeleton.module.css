@@ -1,0 +1,22 @@
+.main {
+  width: 60%;
+  left: 8%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  background-color: var(--background-skeleton-color);
+  background: var(--back-skeleton-linear);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

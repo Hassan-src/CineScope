@@ -45,3 +45,7 @@ export function getCredits(movie_id) {
 export function getMovieDetails(movie_id) {
   return fetchMovie(`/movie/${movie_id}`);
 }
+
+export function getMovieTrailer(movie_id) {
+  return fetchMovie(`/movie/${movie_id}/videos`);
+}

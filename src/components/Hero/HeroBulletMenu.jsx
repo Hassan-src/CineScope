@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import CustomError from "../Error/CustomError";
-import HeroSkeleton from "../Loading/Skeleton/HeroSkeleton";
+import HeroSkeleton from "../Loading/Skeleton/Hero/HeroSkeleton";
 import styles from "./HeroBulletMenu.module.css";
 function HeroBulletMenu({
   trendingDaily,
