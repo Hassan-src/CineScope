@@ -1,4 +1,4 @@
-import styles from "./heroSkeleton.module.css";
+import styles from "./HeroSkeleton.module.css";
 function HeroSkeleton() {
   return <div className={styles.heroSkeleton}></div>;
 }
