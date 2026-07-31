@@ -39,6 +39,7 @@ function HeroPoster({
       <img
         // The size is set according to the API documentation for images
         src={getImageUrl(heroMovie.backdrop_path, "original")}
+        key={heroMovie.id}
         className={styles.backPoster}
         alt={`${heroMovie.original_title} poster`}
       />

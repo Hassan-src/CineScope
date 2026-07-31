@@ -9,8 +9,9 @@ function useMovieTrailer(movie_id) {
     function () {
       if (!movie_id) return;
       async function trailer() {
-        setLoading(true);
+        setTrailer(null);
         setError(null);
+        setLoading(true);
         try {
           const data = await getMovieTrailer(movie_id);
           const officialTrailer =

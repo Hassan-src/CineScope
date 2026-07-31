@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: auto var(--spacing-md) var(--spacing-md) 0;
+  p {
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
+  a {
+    width: 100%;
+    display: flex;
+  }
+  div {
+    width: 100%;
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 12px;
+    transition:
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+    &:hover {
+      box-shadow: 0px 0px 13px 2px var(--btn-hover-shadow-color);
+      background: var(--btn-hover-color);
+      cursor: pointer;
+    }
+  }
+}

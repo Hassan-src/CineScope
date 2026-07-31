@@ -7,7 +7,7 @@ function SidebarHome({ condition }) {
   return (
     <ul className={styles.home}>
       <li>
-        <div>
+        <div className={styles.homeBtn}>
           <img src={Home} alt="Home" />
           {condition && (
             <>

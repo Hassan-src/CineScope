@@ -16,9 +16,9 @@ function SideBar() {
 
   return (
     <aside
-      className={styles.aside}
+      className={`${styles.aside} ${condition ? styles.active : ""}`}
       // Changing the expanding condition on mouse enter
-      onMouseEnter={() => setIsExpanded(true)}
+      onMouseOver={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
       <SidebarHome condition={condition} />

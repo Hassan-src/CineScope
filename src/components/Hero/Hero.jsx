@@ -37,7 +37,6 @@ function Hero() {
     loading: detailsLoading,
     error: detailsError,
   } = useMovieDetails(heroMovie?.id);
-
   return (
     <div className={styles.hero}>
       {heroMovie && (
@@ -56,7 +55,7 @@ function Hero() {
             trendingDailyError={trendingDailyError}
             setTopMovie={setTopMovie}
           />
-          <div className={styles.about}>
+          <div className={styles.about} key={heroMovie.id}>
             <>
               <MovieDetails
                 heroMovie={heroMovie}

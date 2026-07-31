@@ -16,12 +16,12 @@ function useMovieCredits(movie_id) {
         setDirectors([]);
         try {
           const data = await getCredits(movie_id);
-          setActors(data.cast.slice(0, 5));
-          setDirectors(
-            data.crew
-              .filter((dir) => dir.department === "Directing")
-              .slice(0, 3),
-          );
+          const actorsInfo = data.cast.slice(0, 5);
+          const directorsInfo = data.crew
+            .filter((dir) => dir.department === "Directing")
+            .slice(0, 3);
+          setActors(actorsInfo);
+          setDirectors(directorsInfo);
         } catch (err) {
           setError(err.message);
         } finally {

@@ -3,6 +3,8 @@ import CreditsSkeleton from "../Loading/Skeleton/Hero/CreditsSkeleton";
 import styles from "./Casts.module.css";
 function Casts({ actors, directors, creditsLoading, creditsError }) {
   if (creditsLoading) return <CreditsSkeleton />;
+  if (!(actors.length > 0 || directors.length > 0))
+    return <p>No casts information available!</p>;
   if (creditsError) return <CustomError message={creditsError} />;
   // Actors and directors from Tmdb api
   return (

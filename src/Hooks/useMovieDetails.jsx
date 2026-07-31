@@ -15,8 +15,9 @@ function useMovieDetails(movie_id) {
         setGenres([]);
         try {
           const data = await getMovieDetails(movie_id);
+          const genresInfo = data.genres ?? [];
           setDetail(data);
-          setGenres(data.genres ?? []);
+          setGenres(genresInfo);
         } catch (err) {
           setError(err.message);
         } finally {
