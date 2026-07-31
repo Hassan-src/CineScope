@@ -1,4 +1,4 @@
-import styles from "./searchbox.module.css";
+import styles from "./SearchBox.module.css";
 function SearchBox() {
   return (
     <div className={styles.searchbox}>

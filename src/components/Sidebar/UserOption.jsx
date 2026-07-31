@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./SideBar.module.css";
 import Arrowright from "../../assets/Arrow-right.svg";
@@ -29,20 +29,32 @@ function UserOption({ condition, userBtn, setUserBtn }) {
         </Button>
         {userBtn && (
           <ul>
-            <li className={styles.category}>
-              <img
-                className={styles.categoryimg}
-                src={Bookmark}
-                alt="bookmark"
-              />
-              <NavLink to={"bookmarks"}>Bookmarks</NavLink>
-              <img className={styles.arrows} src={Arrowright} alt="arrow" />
-            </li>
-            <li className={styles.category}>
-              <img className={styles.categoryimg} src={power} alt="logout" />
-              <NavLink to={"logIn"}>LogOut</NavLink>
-              <img className={styles.arrows} src={Arrowright} alt="arrow" />
-            </li>
+            <Link to={"bookmarks"}>
+              <li className={styles.category}>
+                <Button className={styles.sidebarbtn}>
+                  <img
+                    className={styles.categoryimg}
+                    src={Bookmark}
+                    alt="bookmark"
+                  />
+                  Bookmarks
+                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
+                </Button>
+              </li>
+            </Link>
+            <Link to={"logIn"}>
+              <li className={styles.category}>
+                <Button className={styles.sidebarbtn}>
+                  <img
+                    className={styles.categoryimg}
+                    src={power}
+                    alt="logout"
+                  />
+                  LogOut
+                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
+                </Button>
+              </li>
+            </Link>
           </ul>
         )}
       </li>

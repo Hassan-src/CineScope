@@ -1,4 +1,4 @@
-import styles from "./logo.module.css";
+import styles from "./Logo.module.css";
 import Cinescopelogo from "../../assets/Cinescope-logo.svg";
 import Cinescope from "../../assets/Cinescope.svg";
 function Logo() {

@@ -1,4 +1,4 @@
-import styles from "./Error.module.css";
+import styles from "./CustomError.module.css";
 import logo from "../../assets/Error.svg";
 // Custom Error message
 function CustomError({ message }) {

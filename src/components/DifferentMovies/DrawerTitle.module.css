@@ -1,0 +1,21 @@
+.pMoviesHeader {
+  display: flex;
+  position: relative;
+  align-items: center;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background: var(--surface-hover-color);
+  }
+  .header {
+    display: inline-block;
+  }
+  .moreBtn {
+    height: fit-content;
+    margin-left: auto;
+  }
+}

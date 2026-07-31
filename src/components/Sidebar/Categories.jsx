@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./SideBar.module.css";
 import film from "../../assets/cropped-film.svg";
@@ -27,18 +27,23 @@ function Categories({ condition, catBtn, setCatBtn }) {
         </Button>
         {catBtn && (
           <ul>
+            {/* FIXME this structure has to be fixed the button need to be removed */}
             <li className={styles.category}>
-              <div>
-                <NavLink to={"movies"}>movies</NavLink>
-                <img className={styles.arrows} src={Arrowright} alt="arrow" />
-              </div>
+              <Link to={"movies"}>
+                <Button className={styles.sidebarbtn}>
+                  movies
+                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
+                </Button>
+              </Link>
             </li>
-            <li className={styles.category}>
-              <div>
-                <NavLink to={"series"}>series</NavLink>
-                <img className={styles.arrows} src={Arrowright} alt="arrow" />
-              </div>
-            </li>
+            <Link to={"series"}>
+              <li className={styles.category}>
+                <Button className={styles.sidebarbtn}>
+                  series
+                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
+                </Button>
+              </li>
+            </Link>
           </ul>
         )}
       </li>
