@@ -14,7 +14,7 @@ function usePopularMovies() {
       try {
         setLoading(true);
         const data = await getPopularMovies();
-        setPopular(data?.results.slice(0, 9));
+        setPopular(data?.results.slice(0, 14));
       } catch (err) {
         setError(err.message);
       } finally {

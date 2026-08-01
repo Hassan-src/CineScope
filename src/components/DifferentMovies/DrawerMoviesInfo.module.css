@@ -1,25 +1,66 @@
 .pContent {
-  border: 3px solid red;
-  width: 80%;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
   display: flex;
-  gap: var(--spacing-lg);
-  margin: var(--spacing-md) auto;
+  margin: var(--spacing-sm) auto;
   padding: var(--spacing-sm);
   overflow: hidden;
 }
 .pMovie {
-  border: 3px solid red;
   width: calc(100% / 5);
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  animation: drawerSlide 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.moviesPoster {
+  height: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 0px 20px 2px var(--surface-hover-color);
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    filter: blur(8px);
+    box-shadow: 0px 0px 20px 2px var(--surface-hover-color);
+    animation: imageFilter 0.3s cubic-bezier(0, 0.15, 0.23, 0.97);
+  }
 }
 .movieTitle {
   font-size: 1.2rem;
+  display: inline-block;
+  text-align: center;
+  margin-top: var(--spacing-sm);
 }
-.show {
-  filter: blur(12px);
+
+.sliderBtn {
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  margin: auto var(--spacing-sm);
+}
+
+@keyframes imageFilter {
+  from {
+    transform: scale(0.9);
+    filter: blur(4px);
+  }
+  to {
+    transform: scale(1);
+    filter: blur(8px);
+  }
+}
+
+@keyframes drawerSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
 }

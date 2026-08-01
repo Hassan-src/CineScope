@@ -47,12 +47,18 @@ export function getTrendingDaily() {
   );
 }
 // Popular movies from Tmdb
+const cachePopularMovies = new Map();
 export function getPopularMovies() {
-  return fetchMovie("/movie/popular");
+  return cachedFetch(cachePopularMovies, "PopularMovies", () =>
+    fetchMovie("/movie/popular"),
+  );
 }
 // Top rated movies from Tmdb
-export function getTopRatedMovies() {
-  return fetchMovie("/movie/top_rated");
+const cacheTopRated = new Map();
+export function getUpComingMovies() {
+  return cachedFetch(cacheTopRated, "TopRatedMovies", () =>
+    fetchMovie("/movie/upcoming"),
+  );
 }
 // Credits from Tmdb including the actors, directors,...
 const cacheCredits = new Map();
