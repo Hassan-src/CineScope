@@ -4,6 +4,7 @@ import styles from "./DrawerMoviesInfo.module.css";
 import left from "../../assets/arrow-narrow-left.svg";
 import right from "../../assets/arrow-narrow-right.svg";
 import Button from "../Button/Button";
+import useMoviesGenres from "../../Hooks/useMoviesGenres";
 function DrawerMoviesInfo({ arrayName, btnFunction }) {
   const [show, setShow] = useState(false);
   return (

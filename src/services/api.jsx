@@ -81,3 +81,10 @@ export function getMovieTrailer(movie_id) {
     fetchMovie(`/movie/${movie_id}/videos`),
   );
 }
+// Movies genres
+const cachedGenres = new Map();
+export function getMoviesGenres() {
+  return cachedFetch(cachedGenres, "MoviesGenres", () =>
+    fetchMovie("/genre/movie/list"),
+  );
+}

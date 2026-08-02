@@ -26,6 +26,7 @@ function MainMovies() {
     upComingStartIndex,
     upComingStartIndex + 7,
   );
+  console.log(popular, upComing);
   function handleSlidePopularBtn() {
     setPopularStartIndex((prev) => {
       const next = prev + 7;
