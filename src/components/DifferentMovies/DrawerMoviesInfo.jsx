@@ -7,6 +7,7 @@ import Button from "../Button/Button";
 import useMoviesGenres from "../../Hooks/useMoviesGenres";
 function DrawerMoviesInfo({ arrayName, btnFunction }) {
   const [show, setShow] = useState(false);
+  // TODO genres showing to bi implemented
   return (
     <ul className={styles.pContent}>
       <Button onClick={btnFunction} className={styles.sliderBtn}>

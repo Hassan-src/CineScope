@@ -5,7 +5,7 @@ import Series from "./pages/Series/Series";
 import Bookmarks from "./pages/Bookmarks/Bookmarks";
 import LogIn from "./pages/LogIn/LogIn";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-
+// TODO linking the movies to its own page and showing the information there 2. showing the series page 3.fixing the sidebar 4.Implementing the bookmark page 5.Implementing the logIn page and a login dommy
 function App() {
   return (
     <BrowserRouter>
