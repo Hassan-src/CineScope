@@ -14,7 +14,6 @@ import HeroBulletMenu from "./HeroBulletMenu";
 import MoviesOptions from "./MoviesOptions";
 
 function Hero() {
-  // Getting the loading value and the API array from the custom hook
   const {
     loading: trendingDailyLoading,
     error: trendingDailyError,

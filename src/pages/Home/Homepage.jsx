@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import SideBar from "../../components/Sidebar/SideBar";
 import Hero from "../../components/Hero/Hero";
 import MainMovies from "../../components/DifferentMovies/MainMovies";
+import HeroProvider from "../../Context/HeroProvider";
 
 function Homepage() {
   return (
@@ -12,7 +13,9 @@ function Homepage() {
       <Header />
       <main className={styles.main}>
         <SideBar />
-        <Hero />
+        <HeroProvider>
+          <Hero />
+        </HeroProvider>
       </main>
     </>
   );
