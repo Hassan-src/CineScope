@@ -40,32 +40,12 @@ function Hero() {
     <div className={styles.hero}>
       {heroMovie && (
         <>
-          <HeroPoster
-            heroMovie={heroMovie}
-            trendingDaily={trendingDaily}
-            setTopMovie={setTopMovie}
-            trendingDailyLoading={trendingDailyLoading}
-            trendingDailyError={trendingDailyError}
-          />
-          <HeroBulletMenu
-            heroMovie={heroMovie}
-            trendingDaily={trendingDaily}
-            trendingDailyLoading={trendingDailyLoading}
-            trendingDailyError={trendingDailyError}
-            setTopMovie={setTopMovie}
-          />
+          <HeroPoster />
+          <HeroBulletMenu />
           <div className={styles.about} key={heroMovie.id}>
             <>
-              <MovieDetails
-                heroMovie={heroMovie}
-                detailsLoading={detailsLoading}
-                detailsError={detailsError}
-              >
-                <MovieTitle
-                  heroMovie={heroMovie}
-                  detailsLoading={detailsLoading}
-                  detailsError={detailsError}
-                />
+              <MovieDetails>
+                <MovieTitle />
                 <AboutList
                   heroMovie={heroMovie}
                   detail={detail}

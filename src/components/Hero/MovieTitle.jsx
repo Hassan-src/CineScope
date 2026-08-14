@@ -1,9 +1,11 @@
+import useMovieProvider from "../../context/useMovieProvider";
 import CustomError from "../Error/CustomError";
 import TitleSkeleton from "../Loading/Skeleton/Hero/TitleSkeleton";
 import styles from "./MovieTitle.module.css";
-function MovieTitle({ heroMovie, detailsLoading, detailsError }) {
-  if (detailsLoading) return <TitleSkeleton />;
-  if (detailsError) return <CustomError message={detailsError} />;
+function MovieTitle() {
+  const { details, heroMovie } = useMovieProvider();
+  if (details.loading) return <TitleSkeleton />;
+  if (details.error) return <CustomError message={details.error} />;
   // Movie title from Tmdb api
   return (
     <h2 className={styles.title}>
