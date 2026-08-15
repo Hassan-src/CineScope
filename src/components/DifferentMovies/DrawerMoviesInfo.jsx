@@ -4,10 +4,19 @@ import styles from "./DrawerMoviesInfo.module.css";
 import left from "../../assets/arrow-narrow-left.svg";
 import right from "../../assets/arrow-narrow-right.svg";
 import Button from "../Button/Button";
-import useMoviesGenres from "../../Hooks/useMoviesGenres";
+import useMovieProvider from "../../context/useMovieProvider";
+
 function DrawerMoviesInfo({ arrayName, btnFunction }) {
-  const [show, setShow] = useState(false);
-  // TODO genres showing to bi implemented
+  const { genres } = useMovieProvider();
+  const [show, setShow] = useState(null);
+  const getMovieGenres = (genreIds) => {
+    return (
+      genreIds
+        ?.map((id) => genres?.data?.find((genre) => genre.id === id))
+        .filter(Boolean) ?? []
+    );
+  };
+  // TODO genres showing to be implemented
   return (
     <ul className={styles.pContent}>
       <Button onClick={btnFunction} className={styles.sliderBtn}>
@@ -17,15 +26,22 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
         <li
           key={movie.id}
           className={`${styles.pMovie} ${show ? styles.active : ""}`}
-          onMouseOver={() => setShow(true)}
-          onMouseLeave={() => setShow(false)}
+          onMouseOver={() => setShow(movie.id)}
+          onMouseLeave={() => setShow(null)}
         >
           <img
-            key={movie.id}
             className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
             src={getImageUrl(movie.poster_path, "w185")}
             alt={`${movie.name}poster`}
           />
+          <div className={styles.genres}>
+            {getMovieGenres(movie.genre_ids).map((genre) => (
+              <span className={styles.genresName} key={genre.id}>
+                {genre.name}
+              </span>
+            ))}
+          </div>
+
           <span>
             <h3 className={styles.movieTitle}>
               {movie.name || movie.title || movie.original_name}

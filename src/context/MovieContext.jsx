@@ -2,8 +2,11 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import {
   getCredits,
   getMovieDetails,
+  getMoviesGenres,
   getMovieTrailer,
+  getPopularMovies,
   getTrendingDaily,
+  getUpComingMovies,
 } from "../services/api";
 
 const MovieContext = createContext();
@@ -25,6 +28,21 @@ const initialState = {
     error: null,
   },
   credits: {
+    data: null,
+    loading: false,
+    error: null,
+  },
+  popularMovies: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  upComingMovies: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  genres: {
     data: null,
     loading: false,
     error: null,
@@ -156,14 +174,126 @@ function reducer(state, action) {
         },
       };
     }
+    // PopularMovies for the movies page
+    case "popular/loading": {
+      return {
+        ...state,
+        popularMovies: {
+          ...state.popularMovies,
+          data: [],
+          loading: true,
+          error: null,
+        },
+      };
+    }
+    case "popular/loaded": {
+      return {
+        ...state,
+        popularMovies: {
+          ...state.popularMovies,
+          data: action.payload,
+          loading: false,
+          error: null,
+        },
+      };
+    }
+    case "popular/rejected": {
+      return {
+        ...state,
+        popularMovies: {
+          ...state.popularMovies,
+          data: [],
+          loading: false,
+          error: action.payload,
+        },
+      };
+    }
+    // Upcoming movies for the movies page
+    case "upComing/loading": {
+      return {
+        ...state,
+        upComingMovies: {
+          ...state.upComingMovies,
+          data: [],
+          loading: true,
+          error: null,
+        },
+      };
+    }
+    case "upComing/loaded": {
+      return {
+        ...state,
+        upComingMovies: {
+          ...state.upComingMovies,
+          data: action.payload,
+          loading: false,
+          error: null,
+        },
+      };
+    }
+    case "upComing/rejected": {
+      return {
+        ...state,
+        upComingMovies: {
+          ...state.upComingMovies,
+          data: [],
+          loading: false,
+          error: action.payload,
+        },
+      };
+    }
+    // Genres base on ids
+    case "genres/loading": {
+      return {
+        ...state,
+        genres: {
+          ...state.genres,
+          data: null,
+          loading: true,
+          error: null,
+        },
+      };
+    }
+    case "genres/loaded": {
+      return {
+        ...state,
+        genres: {
+          ...state.genres,
+          data: action.payload,
+          loading: false,
+          error: null,
+        },
+      };
+    }
+    case "genres/rejected": {
+      return {
+        ...state,
+        genres: {
+          ...state.genres,
+          data: null,
+          loading: false,
+          error: action.payload,
+        },
+      };
+    }
     default:
       throw new Error("Unknown action!");
   }
 }
 
 function MovieProvider({ children }) {
-  const [{ trending, details, trailer, credits, genres }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    {
+      trending,
+      details,
+      trailer,
+      credits,
+      genres,
+      popularMovies,
+      upComingMovies,
+    },
+    dispatch,
+  ] = useReducer(reducer, initialState);
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trending.data.length > 0 ? trending.data[topMovie] : null;
   useEffect(function () {
@@ -238,6 +368,45 @@ function MovieProvider({ children }) {
     },
     [heroMovie?.id],
   );
+  useEffect(function () {
+    async function movies() {
+      dispatch({ type: "popular/loading" });
+      dispatch({ type: "upComing/loading" });
+      getPopularMovies()
+        .then((popularMovies) => {
+          dispatch({
+            type: "popular/loaded",
+            payload: popularMovies?.results.slice(0, 14),
+          });
+        })
+        .catch((err) => {
+          dispatch({ type: "popular/rejected", payload: err.message });
+        });
+      getUpComingMovies()
+        .then((upComingMovies) => {
+          dispatch({
+            type: "upComing/loaded",
+            payload: upComingMovies?.results.slice(0, 14),
+          });
+        })
+        .catch((err) => {
+          dispatch({ type: "upComing/rejected", payload: err.message });
+        });
+    }
+    movies();
+  }, []);
+  useEffect(function () {
+    async function genres() {
+      dispatch({ type: "genres/loading" });
+      try {
+        const data = await getMoviesGenres();
+        dispatch({ type: "genres/loaded", payload: data.genres });
+      } catch (err) {
+        dispatch({ type: "genres/rejected", payload: err.message });
+      }
+    }
+    genres();
+  }, []);
   return (
     <MovieContext.Provider
       value={{
@@ -246,6 +415,8 @@ function MovieProvider({ children }) {
         trailer,
         credits,
         genres,
+        popularMovies,
+        upComingMovies,
         heroMovie,
         topMovie,
         setTopMovie,

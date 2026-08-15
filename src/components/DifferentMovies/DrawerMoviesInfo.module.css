@@ -14,6 +14,7 @@
   flex-direction: column;
   border-radius: var(--border-radius);
   animation: drawerSlide 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
 }
 .moviesPoster {
   height: 100%;
@@ -32,7 +33,17 @@
   text-align: center;
   margin-top: var(--spacing-sm);
 }
-
+.genres {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+  width: 100%;
+  height: fit-content;
+  gap: var(--spacing-lg);
+}
 .sliderBtn {
   width: 50px;
   height: 100%;
