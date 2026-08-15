@@ -25,7 +25,7 @@ const initialState = {
     error: null,
   },
   credits: {
-    data: [],
+    data: null,
     loading: false,
     error: null,
   },
@@ -129,7 +129,7 @@ function reducer(state, action) {
         ...state,
         credits: {
           ...state.credits,
-          data: [],
+          data: null,
           loading: true,
           error: null,
         },
@@ -150,23 +150,20 @@ function reducer(state, action) {
         ...state,
         credits: {
           ...state.credits,
-          data: [],
+          data: null,
           loading: false,
           error: action.payload,
         },
       };
     }
-
     default:
       throw new Error("Unknown action!");
   }
 }
 
 function MovieProvider({ children }) {
-  const [{ trending, details, trailer, credits }, dispatch] = useReducer(
-    reducer,
-    initialState,
-  );
+  const [{ trending, details, trailer, credits, genres }, dispatch] =
+    useReducer(reducer, initialState);
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trending.data.length > 0 ? trending.data[topMovie] : null;
   useEffect(function () {
@@ -248,6 +245,7 @@ function MovieProvider({ children }) {
         details,
         trailer,
         credits,
+        genres,
         heroMovie,
         topMovie,
         setTopMovie,

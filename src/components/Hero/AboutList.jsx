@@ -1,18 +1,17 @@
 import CustomError from "../Error/CustomError";
 import AboutSkeleton from "../Loading/Skeleton/Hero/AboutSkeleton";
+import useMovieProvider from "../../context/useMovieProvider";
+
 import styles from "./AboutList.module.css";
+
 import Date from "../../assets/Date.svg";
 import Duration from "../../assets/Duration.svg";
 import camcorder from "../../assets/camcorder.svg";
-function AboutList({
-  heroMovie,
-  detail,
-  genres,
-  detailsLoading,
-  detailsError,
-}) {
-  if (detailsLoading) return <AboutSkeleton />;
-  if (detailsError) return <CustomError message={detailsError} />;
+
+function AboutList() {
+  const { heroMovie, details } = useMovieProvider();
+  if (details.loading) return <AboutSkeleton />;
+  if (details.error) return <CustomError message={details.error} />;
   // Including the runtime, release date and genre from Tmdb api
   return (
     <ul className={styles.detailList}>
@@ -22,11 +21,11 @@ function AboutList({
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={Duration} alt="" />
-        {detail?.runtime}min
+        {details?.runtime}min
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={camcorder} alt="Genre" />
-        {genres.map((genre) => (
+        {details?.data?.genres.map((genre) => (
           <span key={genre.id} className={styles.genre}>
             {genre?.name}
           </span>

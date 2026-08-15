@@ -1,10 +1,12 @@
+import { useState } from "react";
 import usePopularMovies from "../../Hooks/usePopularMovies";
-import styles from "./MainMovies.module.css";
 import MoviesDrawer from "./MoviesDrawer";
 import DrawerTitle from "./DrawerTitle";
 import DrawerMoviesInfo from "./DrawerMoviesInfo";
-import { useState } from "react";
 import useGetUpComing from "../../Hooks/useUpComingMovies";
+
+import styles from "./MainMovies.module.css";
+
 function MainMovies() {
   const {
     popular,

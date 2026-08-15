@@ -1,12 +1,21 @@
+import useMovieProvider from "../../context/useMovieProvider";
 import CustomError from "../Error/CustomError";
 import CreditsSkeleton from "../Loading/Skeleton/Hero/CreditsSkeleton";
+
 import styles from "./Casts.module.css";
-function Casts({ actors, directors, creditsLoading, creditsError }) {
-  if (creditsLoading) return <CreditsSkeleton />;
+
+function Casts() {
+  const { credits } = useMovieProvider();
+  if (credits.loading) return <CreditsSkeleton />;
+  if (credits.error) return <CustomError message={credits.error} />;
+  const actors = credits?.data?.cast?.slice(0, 5) ?? [];
+  const directors =
+    credits?.data?.crew
+      ?.filter((dir) => dir.department === "Directing")
+      .slice(0, 3) ?? [];
+  console.log(actors, directors);
   if (!(actors.length > 0 || directors.length > 0))
     return <p>No casts information available!</p>;
-  if (creditsError) return <CustomError message={creditsError} />;
-  // Actors and directors from Tmdb api
   return (
     <>
       <p className={styles.casts}>

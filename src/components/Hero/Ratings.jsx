@@ -1,17 +1,22 @@
-import styles from "./Ratings.module.css";
+import useMovieProvider from "../../context/useMovieProvider";
 import useImdbRating from "../../Hooks/useImdbRating";
 import RatingSkeleton from "../Loading/Skeleton/Hero/RatingSkeleton";
 import CustomError from "../Error/CustomError";
+
+import styles from "./Ratings.module.css";
+
 import imdb from "../../assets/imdb.svg";
 import tomato from "../../assets/tomato.svg";
-function Ratings({ detail }) {
+
+function Ratings() {
+  const { details } = useMovieProvider();
   // Showing the movie ratings from Omdb api
   const {
     error: imdbRatingError,
     loading: imdbRatingLoading,
     imdbRate,
     rottenTomato,
-  } = useImdbRating(detail?.imdb_id);
+  } = useImdbRating(details?.data?.imdb_id);
   if (imdbRatingLoading) return <RatingSkeleton />;
   if (imdbRatingError) return <CustomError message={imdbRatingError} />;
   return (

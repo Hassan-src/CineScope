@@ -1,34 +1,32 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import TrailerModal from "../TrailerModal/TrailerModal";
+import useMovieProvider from "../../context/useMovieProvider";
+
 import styles from "./MoviesOptions.module.css";
-import useMovieTrailer from "../../Hooks/useMovieTrailer";
 import logo from "../../assets/Bookmark.svg";
-function MoviesOptions({ heroMovie }) {
+
+function MoviesOptions() {
+  const { trailer } = useMovieProvider();
   const [show, setShow] = useState(false);
-  const {
-    trailer,
-    loading: trailerLoading,
-    error: trailerError,
-  } = useMovieTrailer(heroMovie?.id);
   function handleTrailerBtn() {
-    if (trailerError) return setShow(false);
+    if (trailer.error) return setShow(false);
     setShow((show) => !show);
   }
-  if (trailerLoading) return;
+  if (trailer.loading) return;
   return (
     <div className={styles.btnInfo}>
       <Button
-        className={`${trailerError ? styles.noTrailer : styles.btnTrailer}`}
+        className={`${trailer.error ? styles.noTrailer : styles.btnTrailer}`}
         onClick={handleTrailerBtn}
       >
-        {trailerError ? "Trailer not available" : "Watch Trailer"}
+        {trailer.error ? "Trailer not available" : "Watch Trailer"}
       </Button>
       {trailer && show && (
         <TrailerModal
           onClick={handleTrailerBtn}
-          title={trailer.name}
-          movieKey={trailer.key}
+          title={trailer.data.name}
+          movieKey={trailer.data.key}
           className={styles.active}
         />
       )}

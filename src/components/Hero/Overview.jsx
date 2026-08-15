@@ -1,5 +1,7 @@
 import TextExpander from "../TextExpander/textExpander";
+
 import styles from "./Overview.module.css";
+
 function Overview({ children }) {
   // Includes overview and using a custom textexpander function to shorten the text
   return (
