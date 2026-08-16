@@ -16,7 +16,6 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
         .filter(Boolean) ?? []
     );
   };
-  // TODO genres showing to be implemented
   return (
     <ul className={styles.pContent}>
       <Button onClick={btnFunction} className={styles.sliderBtn}>
@@ -29,19 +28,25 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
           onMouseOver={() => setShow(movie.id)}
           onMouseLeave={() => setShow(null)}
         >
-          <img
-            className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
-            src={getImageUrl(movie.poster_path, "w185")}
-            alt={`${movie.name}poster`}
-          />
           <div className={styles.genres}>
-            {getMovieGenres(movie.genre_ids).map((genre) => (
-              <span className={styles.genresName} key={genre.id}>
-                {genre.name}
-              </span>
-            ))}
+            <img
+              className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
+              src={getImageUrl(movie.poster_path, "w185")}
+              alt={`${movie.name}poster`}
+            />
+            <ul className={styles.genresNameList}>
+              {getMovieGenres(movie.genre_ids)
+                .slice(0, 3)
+                .map((genre) => (
+                  <li
+                    className={`${styles.genresName} ${show ? styles.active : ""}`}
+                    key={genre.id}
+                  >
+                    <span className={styles.genresText}>{genre.name}</span>
+                  </li>
+                ))}
+            </ul>
           </div>
-
           <span>
             <h3 className={styles.movieTitle}>
               {movie.name || movie.title || movie.original_name}

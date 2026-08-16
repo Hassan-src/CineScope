@@ -15,34 +15,62 @@
   border-radius: var(--border-radius);
   animation: drawerSlide 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
   position: relative;
+  padding: 0 var(--spacing-sm);
 }
 .moviesPoster {
-  height: 100%;
+  height: 95%;
+  border-radius: var(--border-radius);
+}
+.movieTitle {
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+}
+.genres {
+  height: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+.genresNameList {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  position: absolute;
   border-radius: var(--border-radius);
   box-shadow: 0px 0px 20px 2px var(--surface-hover-color);
-  transition: box-shadow 0.2s ease;
+  opacity: 0;
+  transition:
+    box-shadow 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
   &:hover {
-    filter: blur(8px);
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.6) 0%,
+      rgba(10, 10, 10, 0.5) 60%,
+      rgba(10, 10, 10, 0.2) 100%
+    );
+    backdrop-filter: blur(6px);
     box-shadow: 0px 0px 20px 2px var(--surface-hover-color);
     animation: imageFilter 0.3s cubic-bezier(0, 0.15, 0.23, 0.97);
   }
 }
-.movieTitle {
-  font-size: 1.2rem;
-  display: inline-block;
-  text-align: center;
-  margin-top: var(--spacing-sm);
+.genresName {
+  background: var(--accent-color);
+  background-clip: text;
 }
-.genres {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 3px solid red;
-  width: 100%;
-  height: fit-content;
-  gap: var(--spacing-lg);
+.genresText {
+  text-shadow: none;
+  color: transparent;
+  text-align: center;
 }
 .sliderBtn {
   width: 50px;
@@ -54,11 +82,11 @@
 @keyframes imageFilter {
   from {
     transform: scale(0.9);
-    filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
   to {
     transform: scale(1);
-    filter: blur(8px);
+    backdrop-filter: blur(6px);
   }
 }
 

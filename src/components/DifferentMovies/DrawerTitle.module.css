@@ -2,25 +2,24 @@
   display: flex;
   position: relative;
   align-items: center;
-
   &::after {
     content: "";
     width: 100%;
     height: 2px;
     position: absolute;
-    bottom: 0;
+    bottom: -6px;
     left: 0;
     background: var(--primary-color);
     border-radius: var(--border-radius);
-    box-shadow: 0px 0px 8px 2px var(--btn-hover-shadow-color);
+    box-shadow: 0px 0px 6px 1px var(--btn-hover-shadow-color);
   }
   .header {
-    border-top: 2px solid var(--primary-color);
+    /* border-top: 2px solid var(--primary-color);
     border-left: 2px solid var(--primary-color);
     border-right: 2px solid var(--primary-color);
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
-    box-shadow: 0px 0px 8px 2px var(--btn-hover-shadow-color);
+    box-shadow: 0px 0px 8px 2px var(--btn-hover-shadow-color); */
     display: inline-block;
     padding: var(--spacing-xsm) var(--spacing-md);
     font-size: 1.8rem;
