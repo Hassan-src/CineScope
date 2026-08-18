@@ -12,7 +12,6 @@ import useMovieProvider from "../../context/useMovieProvider";
 import styles from "./Hero.module.css";
 
 function Hero() {
-  // Setting the starter movie (0 is the first element of the array)
   const { heroMovie } = useMovieProvider();
   return (
     <div className={styles.hero}>

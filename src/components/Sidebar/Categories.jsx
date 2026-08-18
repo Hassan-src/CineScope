@@ -1,4 +1,3 @@
-import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./SideBar.module.css";
 import film from "../../assets/cropped-film.svg";
@@ -13,10 +12,10 @@ function Categories({ condition, catBtn, setCatBtn }) {
     <ul className={styles.categories}>
       <li>
         <Button onClick={handleCatBtn} className={styles.sidebarbtn}>
-          <img src={film} alt="Film" />
+          <img className={styles.catImage} src={film} alt="Film" />
           {condition && (
             <>
-              <p>categories</p>
+              <p className={styles.catText}>categories</p>
               <img
                 className={styles.arrows}
                 src={catBtn ? Arrowdown : Arrowright}
@@ -26,24 +25,25 @@ function Categories({ condition, catBtn, setCatBtn }) {
           )}
         </Button>
         {catBtn && (
-          <ul>
-            {/* FIXME this structure has to be fixed the button need to be removed */}
+          <ul className={styles.catChild}>
             <li className={styles.category}>
-              <Link to={"movies"}>
-                <Button className={styles.sidebarbtn}>
-                  movies
-                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
-                </Button>
-              </Link>
+              <Button
+                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
+                to={"movies"}
+              >
+                <span className={styles.catChildsText}>movies</span>
+                <img className={styles.arrows} src={Arrowright} alt="arrow" />
+              </Button>
             </li>
-            <Link to={"series"}>
-              <li className={styles.category}>
-                <Button className={styles.sidebarbtn}>
-                  series
-                  <img className={styles.arrows} src={Arrowright} alt="arrow" />
-                </Button>
-              </li>
-            </Link>
+            <li className={styles.category}>
+              <Button
+                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
+                to={"series"}
+              >
+                <span className={styles.catChildsText}>series</span>
+                <img className={styles.arrows} src={Arrowright} alt="arrow" />
+              </Button>
+            </li>
           </ul>
         )}
       </li>

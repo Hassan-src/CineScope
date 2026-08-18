@@ -132,6 +132,7 @@ a {
   text-transform: capitalize;
   text-decoration: none;
   list-style: none;
+  border-radius: 12px;
   letter-spacing: var(--text-letter-spacing);
   color: var(--text-color);
 }

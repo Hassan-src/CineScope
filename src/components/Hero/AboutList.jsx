@@ -21,11 +21,11 @@ function AboutList() {
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={Duration} alt="" />
-        {details?.runtime}min
+        {details?.data.runtime}min
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={camcorder} alt="Genre" />
-        {details?.data?.genres.map((genre) => (
+        {details?.data?.genres.slice(0, 3).map((genre) => (
           <span key={genre.id} className={styles.genre}>
             {genre?.name}
           </span>

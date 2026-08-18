@@ -296,6 +296,7 @@ function MovieProvider({ children }) {
   ] = useReducer(reducer, initialState);
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trending.data.length > 0 ? trending.data[topMovie] : null;
+
   useEffect(function () {
     async function loadTrending() {
       dispatch({ type: "trending/loading" });

@@ -31,7 +31,6 @@ function MainMovies() {
       return next >= upComingMovies?.data.length ? 0 : next;
     });
   }
-  // TODO nedd to fix the genre showing
   return (
     <section className={styles.main}>
       <MoviesDrawer>
