@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { getImageUrl } from "../../utils/image";
+import useMovieProvider from "../../context/useMovieProvider";
+import Button from "../Button/Button";
+
 import styles from "./DrawerMoviesInfo.module.css";
+
 import left from "../../assets/arrow-narrow-left.svg";
 import right from "../../assets/arrow-narrow-right.svg";
-import Button from "../Button/Button";
-import useMovieProvider from "../../context/useMovieProvider";
+import DummyPoster from "../../assets/DummyPoster.avif";
 
 function DrawerMoviesInfo({ arrayName, btnFunction }) {
   const { genres } = useMovieProvider();
@@ -31,7 +34,11 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
           <div className={styles.genres}>
             <img
               className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
-              src={getImageUrl(movie.poster_path, "w185")}
+              src={
+                movie.poster_path
+                  ? getImageUrl(movie.poster_path, "w185")
+                  : DummyPoster
+              }
               alt={`${movie.name}poster`}
             />
             <ul className={styles.genresNameList}>

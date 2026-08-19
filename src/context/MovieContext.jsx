@@ -6,6 +6,8 @@ import {
   getMovieTrailer,
   getPopularMovies,
   getTrendingDaily,
+  getTvSeriesPopular,
+  getTvSeriesTopRated,
   getUpComingMovies,
 } from "../services/api";
 
@@ -44,6 +46,16 @@ const initialState = {
   },
   genres: {
     data: null,
+    loading: false,
+    error: null,
+  },
+  tvpopular: {
+    data: [],
+    loading: false,
+    error: null,
+  },
+  tvTopRated: {
+    data: [],
     loading: false,
     error: null,
   },
@@ -276,6 +288,71 @@ function reducer(state, action) {
         },
       };
     }
+    // TvSeries Popular
+    case "tvpopular/loading": {
+      return {
+        ...state,
+        tvpopular: {
+          ...state.tvpopular,
+          data: [],
+          loading: true,
+          error: null,
+        },
+      };
+    }
+    case "tvpopular/loaded": {
+      return {
+        ...state,
+        tvpopular: {
+          ...state.tvpopular,
+          data: action.payload,
+          loading: false,
+          error: null,
+        },
+      };
+    }
+    case "tvpopular/rejected": {
+      return {
+        ...state,
+        tvpopular: {
+          ...state.tvpopular,
+          data: [],
+          loading: false,
+          error: action.payload,
+        },
+      };
+    }
+    // TvSeries top rated
+    case "tvTopRated/loading": {
+      return {
+        ...state,
+        tvTopRated: {
+          data: [],
+          loading: true,
+          error: null,
+        },
+      };
+    }
+    case "tvTopRated/loaded": {
+      return {
+        ...state,
+        tvTopRated: {
+          data: action.payload,
+          loading: false,
+          error: null,
+        },
+      };
+    }
+    case "tvTopRated/rejected": {
+      return {
+        ...state,
+        tvTopRated: {
+          data: [],
+          loading: false,
+          error: action.payload,
+        },
+      };
+    }
     default:
       throw new Error("Unknown action!");
   }
@@ -291,6 +368,8 @@ function MovieProvider({ children }) {
       genres,
       popularMovies,
       upComingMovies,
+      tvpopular,
+      tvTopRated,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -408,6 +487,32 @@ function MovieProvider({ children }) {
     }
     genres();
   }, []);
+  useEffect(function () {
+    async function tvSeriesPopular() {
+      dispatch({ type: "tvpopular/loading" });
+      getTvSeriesPopular()
+        .then((data) =>
+          dispatch({
+            type: "tvpopular/loaded",
+            payload: data?.results.slice(0, 14),
+          }),
+        )
+        .catch((err) =>
+          dispatch({ type: "tvpopular/rejected", payload: err.message }),
+        );
+      getTvSeriesTopRated()
+        .then((data) =>
+          dispatch({
+            type: "tvTopRated/loaded",
+            payload: data?.results.slice(0, 14),
+          }),
+        )
+        .catch((err) =>
+          dispatch({ type: "tvTopRated/rejected", payload: err.message }),
+        );
+    }
+    tvSeriesPopular();
+  }, []);
   return (
     <MovieContext.Provider
       value={{
@@ -418,6 +523,8 @@ function MovieProvider({ children }) {
         genres,
         popularMovies,
         upComingMovies,
+        tvpopular,
+        tvTopRated,
         heroMovie,
         topMovie,
         setTopMovie,

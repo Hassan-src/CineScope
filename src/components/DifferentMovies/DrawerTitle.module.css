@@ -13,18 +13,18 @@
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 6px 1px var(--btn-hover-shadow-color);
   }
+  .moreBtn {
+    height: fit-content;
+    margin-left: auto;
+    background: transparent;
+    &:hover {
+      box-shadow: none;
+      color: var(--primary-color);
+    }
+  }
 }
 .header {
   display: inline-block;
   padding: var(--spacing-xsm) var(--spacing-md);
   font-size: 1.8rem;
-}
-.moreBtn {
-  height: fit-content;
-  margin-left: auto;
-  background: transparent;
-  &:hover {
-    box-shadow: none;
-    color: var(--primary-color);
-  }
 }

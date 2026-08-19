@@ -3,7 +3,10 @@ import Button from "../Button/Button";
 import CustomError from "../Error/CustomError";
 import HeroSkeleton from "../Loading/Skeleton/Hero/HeroSkeleton";
 import useMovieProvider from "../../context/useMovieProvider";
+
 import styles from "./HeroPoster.module.css";
+
+import DummyPoster from "../../assets/DummyPoster.avif";
 import arrownarrowleft from "../../assets/arrow-narrow-left.svg";
 import arrownarrowright from "../../assets/arrow-narrow-right.svg";
 
@@ -29,7 +32,11 @@ function HeroPoster() {
       </Button>
       <img
         // The size is set according to the API documentation for images
-        src={getImageUrl(heroMovie.backdrop_path, "original")}
+        src={
+          heroMovie.backdrop_path
+            ? getImageUrl(heroMovie.backdrop_path, "original")
+            : DummyPoster
+        }
         key={heroMovie.id}
         className={styles.backPoster}
         alt={`${heroMovie.original_title} poster`}

@@ -21,7 +21,7 @@ function AboutList() {
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={Duration} alt="" />
-        {details?.data.runtime}min
+        {details?.data?.runtime}min
       </li>
       <li className={styles.smallDet}>
         <img className={styles.detailImages} src={camcorder} alt="Genre" />

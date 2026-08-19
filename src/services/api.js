@@ -88,3 +88,16 @@ export function getMoviesGenres() {
     fetchMovie("/genre/movie/list"),
   );
 }
+// Tv series
+const chachedTvSeriesPopular = new Map();
+export function getTvSeriesPopular() {
+  return cachedFetch(chachedTvSeriesPopular, "TvSeriesPopular", () =>
+    fetchMovie("/tv/popular"),
+  );
+}
+const cachedTvSeriesTopRated = new Map();
+export function getTvSeriesTopRated() {
+  return cachedFetch(cachedTvSeriesTopRated, "TvSeriesTopRated", () =>
+    fetchMovie("/tv/top_rated"),
+  );
+}
