@@ -30,7 +30,7 @@ function UserOption({ condition, userBtn, setUserBtn }) {
             <li className={styles.category}>
               <Button
                 className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"bookmarks"}
+                to={"/bookmarks"}
               >
                 <img
                   className={styles.categoryimg}
@@ -44,7 +44,7 @@ function UserOption({ condition, userBtn, setUserBtn }) {
             <li className={styles.category}>
               <Button
                 className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"logIn"}
+                to={"/logIn"}
               >
                 <img className={styles.categoryimg} src={power} alt="logout" />
                 <span className={styles.catChildsText}>LogOut</span>

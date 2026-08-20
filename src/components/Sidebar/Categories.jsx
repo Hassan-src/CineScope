@@ -29,7 +29,7 @@ function Categories({ condition, catBtn, setCatBtn }) {
             <li className={styles.category}>
               <Button
                 className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"movies"}
+                to={"/movies"}
               >
                 <span className={styles.catChildsText}>movies</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />
@@ -38,7 +38,7 @@ function Categories({ condition, catBtn, setCatBtn }) {
             <li className={styles.category}>
               <Button
                 className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"series"}
+                to={"/series"}
               >
                 <span className={styles.catChildsText}>series</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />

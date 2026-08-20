@@ -7,10 +7,11 @@ import styles from "./DrawerMoviesInfo.module.css";
 
 import left from "../../assets/arrow-narrow-left.svg";
 import right from "../../assets/arrow-narrow-right.svg";
+import bookmarkLogo from "../../assets/Bookmark.svg";
 import DummyPoster from "../../assets/DummyPoster.avif";
 
 function DrawerMoviesInfo({ arrayName, btnFunction }) {
-  const { genres } = useMovieProvider();
+  const { genres, bookmarksMovieIds, handleBookMarkBtn } = useMovieProvider();
   const [show, setShow] = useState(null);
   const getMovieGenres = (genreIds) => {
     return (
@@ -41,6 +42,16 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
               }
               alt={`${movie.name}poster`}
             />
+            <Button
+              className={`${styles.btnBookmark} ${bookmarksMovieIds.includes(movie.id) ? styles.btnBookmarkActive : ""}`}
+              onClick={() => handleBookMarkBtn(movie)}
+            >
+              <img
+                className={styles.bookmarkLogo}
+                src={bookmarkLogo}
+                alt="bookmark"
+              />
+            </Button>
             <ul className={styles.genresNameList}>
               {getMovieGenres(movie.genre_ids)
                 .slice(0, 3)

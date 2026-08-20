@@ -13,7 +13,6 @@ function Casts() {
     credits?.data?.crew
       ?.filter((dir) => dir.department === "Directing")
       .slice(0, 3) ?? [];
-  console.log(actors, directors);
   if (!(actors.length > 0 || directors.length > 0))
     return <p>No casts information available!</p>;
   return (

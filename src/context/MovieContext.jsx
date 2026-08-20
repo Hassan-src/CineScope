@@ -10,6 +10,7 @@ import {
   getTvSeriesTopRated,
   getUpComingMovies,
 } from "../services/api";
+import useLocalStorageState from "../Hooks/useLocalStorageState";
 
 const MovieContext = createContext();
 
@@ -375,7 +376,27 @@ function MovieProvider({ children }) {
   ] = useReducer(reducer, initialState);
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trending.data.length > 0 ? trending.data[topMovie] : null;
-
+  const [bookmarks, setBookmarks] = useLocalStorageState([], "bookMark");
+  const bookmarksMovieIds = bookmarks?.map((id) => id.id);
+  function handleBookMarkBtn(movie) {
+    setBookmarks((current) => {
+      // Preventing duplicate movies
+      const exists = current.some((item) => item.id === movie.id);
+      if (exists) {
+        return current.filter((item) => item.id !== movie.id);
+      }
+      return [
+        ...current,
+        {
+          id: movie.id,
+          title: movie.title || movie.name,
+          poster_path: movie.poster_path,
+          release_date: movie.release_date,
+          overview: movie.overview,
+        },
+      ];
+    });
+  }
   useEffect(function () {
     async function loadTrending() {
       dispatch({ type: "trending/loading" });
@@ -527,6 +548,10 @@ function MovieProvider({ children }) {
         tvTopRated,
         heroMovie,
         topMovie,
+        bookmarks,
+        bookmarksMovieIds,
+        setBookmarks,
+        handleBookMarkBtn,
         setTopMovie,
       }}
     >
