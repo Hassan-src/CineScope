@@ -1,0 +1,43 @@
+.listEmpty {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.buttonsRedi {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: var(--spacing-xlg);
+}
+.emptyFolder {
+  width: 150px;
+  margin: 0 auto var(--spacing-xlg) auto;
+}
+.emptyText {
+  text-align: center;
+  font-size: 3.4rem;
+}
+.redirectBtn {
+  width: fit-content;
+  border: none;
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  transition: 0.2s ease;
+  &:hover {
+    background: var(--btn-hover-color);
+    box-shadow: 0px 0px 22px -4px var(--btn-hover-shadow-color);
+    cursor: pointer;
+  }
+}
