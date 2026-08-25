@@ -18,3 +18,20 @@
     margin-right: var(--spacing-sm);
   }
 }
+@media only screen and (max-width: 600px) {
+  .login {
+    font-size: 0.8rem;
+    img {
+      width: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .login {
+    font-size: 0.6rem;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    img {
+      width: 8px;
+    }
+  }
+}

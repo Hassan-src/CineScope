@@ -3,8 +3,31 @@
   height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm)
     var(--spacing-md);
   border-bottom: 1px solid var(--border-color);
+}
+.searchButton {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  margin-left: auto;
+  margin-right: var(--spacing-md);
+  img {
+    width: 20px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .searchButton {
+    width: 35px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .searchButton {
+    padding: 0.6rem var(--spacing-sm);
+    margin-right: var(--spacing-sm);
+    img {
+      width: 10px;
+    }
+  }
 }

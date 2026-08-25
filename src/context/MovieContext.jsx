@@ -374,8 +374,12 @@ function MovieProvider({ children }) {
     },
     dispatch,
   ] = useReducer(reducer, initialState);
+  // Index of the hero movie
   const [topMovie, setTopMovie] = useState(0);
   const heroMovie = trending.data.length > 0 ? trending.data[topMovie] : null;
+  // Search box state
+  const [searchBox, setSearchBox] = useState(false);
+  // Handling the localStorage data saving for the bookmark page
   const [bookmarks, setBookmarks] = useLocalStorageState([], "bookMark");
   const bookmarksMovieIds = bookmarks?.map((id) => id.id);
   function handleBookMarkBtn(movie) {
@@ -398,6 +402,9 @@ function MovieProvider({ children }) {
       ];
     });
   }
+  /* =======================================
+      Trending movies data for the home page
+     ======================================= */
   useEffect(function () {
     async function loadTrending() {
       dispatch({ type: "trending/loading" });
@@ -414,6 +421,7 @@ function MovieProvider({ children }) {
     }
     loadTrending();
   }, []);
+  // Fetching All the details for the home page
   useEffect(
     function () {
       if (!heroMovie?.id) return;
@@ -470,6 +478,9 @@ function MovieProvider({ children }) {
     },
     [heroMovie?.id],
   );
+  /* =======================================
+      Fetching the movies data (movies page)
+     ======================================= */
   useEffect(function () {
     async function movies() {
       dispatch({ type: "popular/loading" });
@@ -497,18 +508,9 @@ function MovieProvider({ children }) {
     }
     movies();
   }, []);
-  useEffect(function () {
-    async function genres() {
-      dispatch({ type: "genres/loading" });
-      try {
-        const data = await getMoviesGenres();
-        dispatch({ type: "genres/loaded", payload: data.genres });
-      } catch (err) {
-        dispatch({ type: "genres/rejected", payload: err.message });
-      }
-    }
-    genres();
-  }, []);
+  /* =======================================
+      Fetching the series data (series page)
+     ======================================= */
   useEffect(function () {
     async function tvSeriesPopular() {
       dispatch({ type: "tvpopular/loading" });
@@ -535,6 +537,19 @@ function MovieProvider({ children }) {
     }
     tvSeriesPopular();
   }, []);
+  // Fetching genres base on their genre ids
+  useEffect(function () {
+    async function genres() {
+      dispatch({ type: "genres/loading" });
+      try {
+        const data = await getMoviesGenres();
+        dispatch({ type: "genres/loaded", payload: data.genres });
+      } catch (err) {
+        dispatch({ type: "genres/rejected", payload: err.message });
+      }
+    }
+    genres();
+  }, []);
   return (
     <MovieContext.Provider
       value={{
@@ -552,8 +567,10 @@ function MovieProvider({ children }) {
         bookmarks,
         bookmarksMovieIds,
         setBookmarks,
+        searchBox,
         handleBookMarkBtn,
         setTopMovie,
+        setSearchBox,
       }}
     >
       {children}
