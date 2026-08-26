@@ -1,5 +1,5 @@
-import styles from "./SideBar.module.css";
 import Button from "../Button/Button";
+import styles from "./NavBarHome.module.css";
 import Home from "../../assets/Home.svg";
 import Arrowright from "../../assets/Arrow-right.svg";
 function SidebarHome({ condition }) {

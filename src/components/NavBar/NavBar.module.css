@@ -1,0 +1,57 @@
+.nav {
+  width: 80px;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--spacing-md);
+  transition: background 0.25s ease;
+  &:hover {
+    background: var(--surface-hover-color);
+  }
+}
+.active {
+  .arrows,
+  p {
+    animation: fontDisplay 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
+  }
+}
+.menuOpenerBox {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.navBarMenu {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-md);
+  background-color: var(--bg-color);
+  padding: var(--spacing-md);
+  z-index: 11;
+  border: 2px solid var(--border-color);
+  position: absolute;
+  top: 46px;
+}
+.menuArrow {
+  width: 6px;
+  margin-left: var(--spacing-sm);
+}
+@keyframes fontDisplay {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

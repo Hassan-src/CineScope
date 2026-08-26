@@ -1,4 +1,4 @@
-import styles from "./SidebarFooter.module.css";
+import styles from "./NavbarFooter.module.css";
 import receipt from "../../assets/receipt.svg";
 function SideBarFooter({ condition }) {
   return (

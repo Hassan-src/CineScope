@@ -7,6 +7,7 @@ import Button from "../Button/Button";
 import styles from "./Header.module.css";
 
 import search from "../../assets/search.svg";
+import NavBar from "../NavBar/NavBar";
 
 function Header() {
   const { searchBox, setSearchBox } = useMovieProvider();
@@ -15,6 +16,7 @@ function Header() {
       {searchBox && <SearchBox />}
       <header className={styles.header}>
         <Logo />
+        <NavBar />
         <Button
           className={styles.searchButton}
           onClick={() => setSearchBox((s) => !s)}

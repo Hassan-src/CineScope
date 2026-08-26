@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import styles from "./SideBar.module.css";
+import styles from "./Categories.module.css";
 import film from "../../assets/cropped-film.svg";
 import Arrowdown from "../../assets/Arrow-down.svg";
 import Arrowright from "../../assets/Arrow-right.svg";

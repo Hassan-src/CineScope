@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import styles from "./SideBar.module.css";
+import styles from "./UserOption.module.css";
 import Arrowright from "../../assets/Arrow-right.svg";
 import Arrowdown from "../../assets/Arrow-down.svg";
 import Bookmark from "../../assets/Bookmark.svg";
