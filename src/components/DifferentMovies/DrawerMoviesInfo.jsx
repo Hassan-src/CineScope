@@ -21,61 +21,69 @@ function DrawerMoviesInfo({ arrayName, btnFunction }) {
     );
   };
   return (
-    <ul className={styles.pContent}>
-      <Button onClick={btnFunction} className={styles.sliderBtn}>
+    <div className={styles.contentWrapper}>
+      <Button
+        onClick={btnFunction}
+        className={`${styles.sliderBtn} ${styles.sliderBtnLeft}`}
+      >
         <img src={left} alt="left" />
       </Button>
-      {arrayName.map((movie) => (
-        <li
-          key={movie.id}
-          className={`${styles.pMovie} ${show ? styles.active : ""}`}
-          onMouseOver={() => setShow(movie.id)}
-          onMouseLeave={() => setShow(null)}
-        >
-          <div className={styles.genres}>
-            <img
-              className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
-              src={
-                movie.poster_path
-                  ? getImageUrl(movie.poster_path, "w185")
-                  : DummyPoster
-              }
-              alt={`${movie.name}poster`}
-            />
-            <Button
-              className={`${styles.btnBookmark} ${bookmarksMovieIds.includes(movie.id) ? styles.btnBookmarkActive : ""}`}
-              onClick={() => handleBookMarkBtn(movie)}
-            >
+      <ul className={styles.pContent}>
+        {arrayName.map((movie) => (
+          <li
+            key={movie.id}
+            className={`${styles.pMovie} ${show ? styles.active : ""}`}
+            onMouseOver={() => setShow(movie.id)}
+            onMouseLeave={() => setShow(null)}
+          >
+            <div className={styles.genres}>
               <img
-                className={styles.bookmarkLogo}
-                src={bookmarkLogo}
-                alt="bookmark"
+                className={`${styles.moviesPoster} ${show ? styles.active : ""}`}
+                src={
+                  movie.poster_path
+                    ? getImageUrl(movie.poster_path, "w185")
+                    : DummyPoster
+                }
+                alt={`${movie.name}poster`}
               />
-            </Button>
-            <ul className={styles.genresNameList}>
-              {getMovieGenres(movie.genre_ids)
-                .slice(0, 3)
-                .map((genre) => (
-                  <li
-                    className={`${styles.genresName} ${show ? styles.active : ""}`}
-                    key={genre.id}
-                  >
-                    <span className={styles.genresText}>{genre.name}</span>
-                  </li>
-                ))}
-            </ul>
-          </div>
-          <span>
-            <h3 className={styles.movieTitle}>
-              {movie.name || movie.title || movie.original_name}
-            </h3>
-          </span>
-        </li>
-      ))}
-      <Button onClick={btnFunction} className={styles.sliderBtn}>
+              <Button
+                className={`${styles.btnBookmark} ${bookmarksMovieIds.includes(movie.id) ? styles.btnBookmarkActive : ""}`}
+                onClick={() => handleBookMarkBtn(movie)}
+              >
+                <img
+                  className={styles.bookmarkLogo}
+                  src={bookmarkLogo}
+                  alt="bookmark"
+                />
+              </Button>
+              <ul className={styles.genresNameList}>
+                {getMovieGenres(movie.genre_ids)
+                  .slice(0, 3)
+                  .map((genre) => (
+                    <li
+                      className={`${styles.genresName} ${show ? styles.active : ""}`}
+                      key={genre.id}
+                    >
+                      <span className={styles.genresText}>{genre.name}</span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <span>
+              <h3 className={styles.movieTitle}>
+                {movie.name || movie.title || movie.original_name}
+              </h3>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <Button
+        onClick={btnFunction}
+        className={`${styles.sliderBtn} ${styles.sliderBtnRight}`}
+      >
         <img src={right} alt="right" />
       </Button>
-    </ul>
+    </div>
   );
 }
 

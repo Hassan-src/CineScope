@@ -20,7 +20,7 @@
   .player {
     height: 90%;
     .closeTrailer {
-      top: 15px;
+      top: 5px;
       font-size: 0.6rem;
       padding: var(--spacing-xsm) var(--spacing-sm);
     }
