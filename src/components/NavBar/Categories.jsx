@@ -27,20 +27,14 @@ function Categories({ condition, catBtn, setCatBtn }) {
         {catBtn && (
           <ul className={styles.catChild}>
             <li className={styles.category}>
-              <Button
-                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"/movies"}
-              >
-                <span className={styles.catChildsText}>movies</span>
+              <Button className={styles.categoryChildBtn} to={"/movies"}>
+                <span className={styles.categoryChildsText}>movies</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />
               </Button>
             </li>
             <li className={styles.category}>
-              <Button
-                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"/series"}
-              >
-                <span className={styles.catChildsText}>series</span>
+              <Button className={styles.categoryChildBtn} to={"/series"}>
+                <span className={styles.categoryChildsText}>series</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />
               </Button>
             </li>

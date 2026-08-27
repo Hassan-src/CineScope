@@ -15,18 +15,50 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  .bullet {
-    padding: 6px;
-    background: transparent;
-    transition: all 0.2s ease;
-    border-radius: 50%;
-    &:hover {
-      background: var(--primary-color);
-      box-shadow: 0px 0px 22px 1px var(--btn-hover-shadow-color);
-    }
-  }
-  .bulletActive {
+}
+.bullet {
+  padding: 6px;
+  background: transparent;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  &:hover {
     background: var(--primary-color);
     box-shadow: 0px 0px 22px 1px var(--btn-hover-shadow-color);
+  }
+}
+.bulletActive {
+  background: var(--primary-color);
+  box-shadow: 0px 0px 22px 1px var(--btn-hover-shadow-color);
+}
+@media only screen and (max-width: 1300px) {
+  .bullets {
+    bottom: 30px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .bullets {
+    width: 220px;
+    bottom: 50px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .bullets {
+    width: 180px;
+    bottom: 45px;
+    padding: var(--spacing-xsm);
+  }
+  .bullet {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .bullets {
+    width: 150px;
+    height: 25px;
+    bottom: 55px;
+  }
+  .bullet {
+    font-size: 0.4rem;
+    padding: 4px;
   }
 }

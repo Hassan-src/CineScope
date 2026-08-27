@@ -1,16 +1,59 @@
 .summary {
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-size: 1rem;
   margin: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-md);
-  .overview {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.6;
+}
+.overview {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+.btnExpand {
+  button {
+    display: inline;
+    padding: 0 var(--spacing-sm);
+    box-shadow: none;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .summary {
+    font-size: 0.8rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .summary {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .summary {
+    font-size: 0.6rem;
   }
   .btnExpand {
     button {
-      display: inline;
-      padding: 0 var(--spacing-sm);
-      box-shadow: none;
+      font-size: 0.6rem;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .summary {
+    font-size: 0.45rem;
+    margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
+  }
+  .btnExpand {
+    button {
+      font-size: 0.45rem;
+    }
+  }
+}
+@media only screen and (max-width: 330px) {
+  .summary {
+    font-size: 0.35rem;
+  }
+  .btnExpand {
+    button {
+      font-size: 0.35rem;
     }
   }
 }

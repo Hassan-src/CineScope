@@ -11,7 +11,7 @@
   }
   a {
     width: 100%;
-    display: flex;
+    display: inline-block;
   }
   div {
     width: 100%;
@@ -20,6 +20,12 @@
     align-items: center;
     justify-content: flex-start;
     border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.92) 0%,
+      rgba(10, 10, 10, 0.5) 100%
+    );
     transition:
       box-shadow 0.2s ease,
       background 0.2s ease;
@@ -28,5 +34,15 @@
       background: var(--btn-hover-color);
       cursor: pointer;
     }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .footer {
+    margin-bottom: 7rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .footer {
+    margin-bottom: 4rem;
   }
 }

@@ -3,14 +3,14 @@
   align-items: center;
 }
 .detailImages {
-  width: clamp(12px, 2vw, 16px);
+  width: clamp(10px, 2vw, 16px);
   margin-right: var(--spacing-sm);
 }
 .smallDet {
   display: flex;
   align-items: center;
   padding: 0 1.6rem 0 0;
-  font-size: clamp(0.6rem, 1vw, 0.9rem);
+  font-size: clamp(0.4rem, 1vw, 0.9rem);
   &:not(:last-child)::after {
     content: "";
     width: 8px;
@@ -27,5 +27,26 @@
     margin: var(--spacing-sm);
     border-right: 1px dashed var(--primary-color);
     filter: drop-shadow(0 0 0.3rem var(--btn-hover-shadow-color));
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .detailList {
+    display: block;
+  }
+  .smallDet {
+    margin-bottom: var(--spacing-sm);
+    &:not(:last-child)::after {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .detailList {
+    display: block;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .detailList {
+    display: block;
   }
 }

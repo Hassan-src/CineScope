@@ -1,7 +1,11 @@
 .title {
   text-transform: uppercase;
-  font-size: clamp(2rem, 6vw, 3.3rem);
+  font-size: clamp(1.2rem, 5vw, 3.3rem);
   font-weight: 700;
   letter-spacing: -2px;
-  line-height: 55px;
+}
+@media only screen and (max-width: 330px) {
+  .title {
+    font-size: 0.8rem;
+  }
 }

@@ -1,3 +1,6 @@
+.categories {
+  width: 30%;
+}
 .catImage {
   width: 25px;
   margin: 0 var(--spacing-sm);
@@ -13,9 +16,10 @@
 }
 .sidebarbtn {
   width: 100%;
-  height: 40px;
+  height: 50px;
   justify-content: flex-start;
   background: transparent;
+  border: 1px solid var(--border-color);
   padding: var(--spacing-sm);
   display: flex;
   align-items: center;
@@ -46,5 +50,32 @@
       background: var(--btn-hover-color);
       cursor: pointer;
     }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .catText {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .categories {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .categories {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .catText {
+    font-size: 0.8rem;
+  }
+  .sidebarbtn {
+    width: 100%;
+    height: 38px;
+  }
+  .catImage {
+    width: 15px;
   }
 }

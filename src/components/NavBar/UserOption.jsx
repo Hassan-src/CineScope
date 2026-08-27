@@ -28,26 +28,20 @@ function UserOption({ condition, userBtn, setUserBtn }) {
         {userBtn && (
           <ul className={styles.catChild}>
             <li className={styles.category}>
-              <Button
-                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"/bookmarks"}
-              >
+              <Button className={styles.categoryChildBtn} to={"/bookmarks"}>
                 <img
-                  className={styles.categoryimg}
+                  className={styles.categoryImg}
                   src={Bookmark}
                   alt="bookmark"
                 />
-                <span className={styles.catChildsText}>Bookmarks</span>
+                <span className={styles.categoryChildsText}>Bookmarks</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />
               </Button>
             </li>
             <li className={styles.category}>
-              <Button
-                className={`${styles.sidebarbtn} ${styles.sidebarbtnChild}`}
-                to={"/logIn"}
-              >
-                <img className={styles.categoryimg} src={power} alt="logout" />
-                <span className={styles.catChildsText}>LogOut</span>
+              <Button className={styles.categoryChildBtn} to={"/logIn"}>
+                <img className={styles.categoryImg} src={power} alt="logout" />
+                <span className={styles.categoryChildsText}>LogOut</span>
                 <img className={styles.arrows} src={Arrowright} alt="arrow" />
               </Button>
             </li>

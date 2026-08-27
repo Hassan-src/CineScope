@@ -16,3 +16,13 @@
     padding: var(--spacing-sm) var(--spacing-md);
   }
 }
+@media only screen and (max-width: 400px) {
+  .player {
+    height: 90%;
+    .closeTrailer {
+      top: 15px;
+      font-size: 0.6rem;
+      padding: var(--spacing-xsm) var(--spacing-sm);
+    }
+  }
+}

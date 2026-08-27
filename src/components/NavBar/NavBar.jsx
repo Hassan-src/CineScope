@@ -6,6 +6,7 @@ import UserOption from "./UserOption";
 import SidebarFooter from "./NavbarFooter";
 import arrowLeft from "../../assets/Arrow-right.svg";
 import arrowDown from "../../assets/Arrow-down.svg";
+import Button from "../Button/Button";
 function NavBar() {
   // Expanding the sidebar base on the condition
   const [isExpanded, setIsExpanded] = useState(false);
@@ -16,12 +17,9 @@ function NavBar() {
   // Buttons functionalities
   // TODO Changing the side bar to a nav bar like a ham btn li ---> div --> options to change the page
   return (
-    <nav
-      className={`${styles.nav} ${isExpanded ? styles.active : ""}`}
-      // Changing the expanding condition on mouse enter
-    >
-      <div
-        className={styles.menuOpenerBox}
+    <div className={styles.menuOpenerBox}>
+      <Button
+        className={styles.navModalBtn}
         onClick={() => setIsExpanded((s) => !s)}
       >
         <span>Menu</span>
@@ -30,9 +28,15 @@ function NavBar() {
         ) : (
           <img className={styles.menuArrow} src={arrowLeft} alt="arrow" />
         )}
-      </div>
+      </Button>
       {isExpanded && (
         <div className={styles.navBarMenu}>
+          <Button
+            className={styles.closeNavBtn}
+            onClick={() => setIsExpanded((s) => !s)}
+          >
+            &times;
+          </Button>
           <SidebarHome condition={condition} />
           <Categories
             condition={condition}
@@ -47,7 +51,7 @@ function NavBar() {
           <SidebarFooter condition={condition} />
         </div>
       )}
-    </nav>
+    </div>
   );
 }
 

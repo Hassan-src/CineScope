@@ -60,3 +60,28 @@
     filter: blur(0) brightness(1);
   }
 }
+@media only screen and (max-width: 1300px) {
+  .about {
+    top: 10px;
+  }
+}
+@media only screen and (max-width: 930px) {
+  .about {
+    width: 100%;
+    left: 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .about {
+    width: 100%;
+    left: 0;
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .about {
+    width: 100%;
+    left: 0;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}

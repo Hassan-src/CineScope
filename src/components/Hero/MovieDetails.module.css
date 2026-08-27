@@ -1,19 +1,67 @@
 .movieDetail {
   max-height: 800px;
   display: flex;
+}
+.moviePoster {
+  width: 320px;
+  height: 450px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+}
+.description {
+  height: clamp(200px, 40vh, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+@media only screen and (max-width: 1300px) {
   .moviePoster {
-    width: clamp(100px, 40vw, 320px);
-    height: clamp(200px, 50vh, 800px);
-    border-radius: var(--border-radius);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+    width: 280px;
+    height: 370px;
   }
-
   .description {
-    height: clamp(200px, 40vh, 100%);
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
-    margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
-    border-radius: var(--border-radius);
+    gap: 25px;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .moviePoster {
+    width: 260px;
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .moviePoster {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .moviePoster {
+    width: 180px;
+    height: 300px;
+  }
+  .description {
+    margin: 0 0 var(--spacing-sm) var(--spacing-md);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .moviePoster {
+    width: 130px;
+    height: 220px;
+  }
+  .description {
+    gap: 18px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .moviePoster {
+    width: 120px;
+    height: 200px;
+  }
+  .description {
+    margin: 0 0 var(--spacing-xsm) var(--spacing-sm);
+    gap: 15px;
   }
 }
