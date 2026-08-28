@@ -8,9 +8,7 @@ function BookmarkEmpty() {
   return (
     <div className={styles.listEmpty}>
       <img className={styles.emptyFolder} src={empty} alt="emptyFolder" />
-      <h1 className={styles.emptyText}>
-        Your bookmark page is empty add more...
-      </h1>
+      <h1 className={styles.emptyText}>Your bookmark is empty add more...</h1>
       <div className={styles.buttonsRedi}>
         <Button className={styles.redirectBtn} to={"/series"}>
           Series page

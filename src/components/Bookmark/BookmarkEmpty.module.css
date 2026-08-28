@@ -5,8 +5,8 @@
   flex-direction: column;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  transform: translate(-50%, 50%);
 }
 .buttonsRedi {
   display: flex;
@@ -41,5 +41,69 @@
     cursor: pointer;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
+  .emptyFolder {
+    width: 140px;
+  }
+  .emptyText {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .emptyFolder {
+    width: 120px;
+  }
+  .emptyText {
+    font-size: 2.5rem;
+  }
+  .redirectBtn {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .emptyFolder {
+    width: 100px;
+  }
+  .emptyText {
+    font-size: 2rem;
+  }
+  .redirectBtn {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .emptyFolder {
+    width: 80px;
+  }
+  .emptyText {
+    font-size: 1.5rem;
+  }
+  .redirectBtn {
+    padding: 0.4rem 0.4rem;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .emptyFolder {
+    width: 60px;
+    margin-bottom: 1.2rem;
+  }
+  .emptyText {
+    font-size: 1rem;
+  }
+  .redirectBtn {
+    padding: 0.3rem 0.3rem;
+  }
+  .buttonsRedi {
+    flex-direction: column;
+    margin-top: 1.2rem;
+    gap: var(--spacing-md);
+  }
+}
+@media only screen and (max-width: 350px) {
+  .emptyFolder {
+    width: 40px;
+  }
+  .emptyText {
+    font-size: 0.8rem;
+  }
 }
