@@ -5,7 +5,7 @@ import useMovieProvider from "../../context/useMovieProvider";
 
 import styles from "./MoviesOptions.module.css";
 import logo from "../../assets/Bookmark.svg";
-
+import play from "../../assets/play.svg";
 function MoviesOptions() {
   const { trailer, heroMovie, handleBookMarkBtn, bookmarksMovieIds } =
     useMovieProvider();
@@ -22,6 +22,9 @@ function MoviesOptions() {
         className={`${trailer.error ? styles.noTrailer : styles.btnTrailer}`}
         onClick={handleTrailerBtn}
       >
+        {!trailer.error && (
+          <img className={styles.playLogo} src={play} alt="play" />
+        )}
         {trailer.error ? "Trailer not available" : "Watch Trailer"}
       </Button>
       {trailer && show && (

@@ -20,7 +20,12 @@
   background-color: var(--primary-color);
 }
 .btnTrailer {
-  background: var(--primary-color);
+  background: rgb(250, 181, 5);
+  color: #000;
+}
+.playLogo {
+  width: 15px;
+  margin-right: var(--spacing-sm);
 }
 .noTrailer {
   background-color: transparent;
@@ -64,6 +69,9 @@
     font-size: 0.6rem;
     padding: 0.5rem var(--spacing-sm);
   }
+  .playLogo {
+    width: 12px;
+  }
 }
 @media only screen and (max-width: 400px) {
   .btnTrailer,
@@ -72,6 +80,9 @@
     font-size: 0.5rem;
   }
   .bookmarkLogo {
+    width: 8px;
+  }
+  .playLogo {
     width: 8px;
   }
 }
