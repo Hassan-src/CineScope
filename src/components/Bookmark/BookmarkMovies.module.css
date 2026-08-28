@@ -1,15 +1,14 @@
 .main {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: auto;
   position: relative;
+  padding-bottom: var(--spacing-xlg);
 }
-
 .mainCard {
   width: 100%;
-  height: calc(100% / 3);
+  min-height: 200px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +23,6 @@
 }
 .moviesInfo {
   width: 50%;
-  height: 100%;
   display: flex;
   gap: var(--spacing-md);
   flex-direction: column;
@@ -55,5 +53,107 @@
   &:hover {
     background: #dc2626;
     box-shadow: 0px 0px 20px 5px #8c1717;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .posterImg {
+    width: 130px;
+  }
+  .releaseDate {
+    font-size: 0.8rem;
+  }
+  .movieTitle {
+    font-size: 1.3rem;
+  }
+  .btnExp {
+    font-size: 0.8rem;
+    button {
+      font-size: 0.8rem;
+    }
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .posterImg {
+    width: 120px;
+  }
+  .releaseDate {
+    font-size: 0.7rem;
+  }
+  .movieTitle {
+    font-size: 1.2rem;
+  }
+  .btnExp {
+    font-size: 0.7rem;
+    button {
+      font-size: 0.7rem;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .deleteBtn {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mainCard {
+    gap: var(--spacing-md);
+  }
+  .posterImg {
+    width: 110px;
+  }
+  .releaseDate {
+    font-size: 0.6rem;
+  }
+  .movieTitle {
+    font-size: 1rem;
+  }
+  .btnExp {
+    font-size: 0.6rem;
+    button {
+      font-size: 0.6rem;
+    }
+  }
+  .deleteBtn {
+    font-size: 0.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .mainCard {
+    gap: var(--spacing-sm);
+  }
+  .posterImg {
+    width: 90px;
+  }
+  .releaseDate {
+    font-size: 0.5rem;
+  }
+  .movieTitle {
+    font-size: 0.9rem;
+  }
+  .btnExp {
+    font-size: 0.5rem;
+    button {
+      font-size: 0.5rem;
+    }
+  }
+  .deleteBtn {
+    padding: var(--spacing-xsm) var(--spacing-sm);
+  }
+}
+@media only screen and (max-width: 360px) {
+  .posterImg {
+    width: 80px;
+  }
+  .releaseDate {
+    font-size: 0.4rem;
+  }
+  .movieTitle {
+    font-size: 0.8rem;
+  }
+  .btnExp {
+    font-size: 0.4rem;
+    button {
+      font-size: 0.4rem;
+    }
   }
 }

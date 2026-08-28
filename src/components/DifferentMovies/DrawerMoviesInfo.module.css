@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  padding-bottom: var(--spacing-md);
 }
 .pContent {
   --movies-per-slide: 7;
@@ -30,9 +31,9 @@
   font-size: 1rem;
   display: inline-block;
   text-align: center;
+  margin-top: var(--spacing-md);
 }
 .genres {
-  height: 90%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -141,10 +142,22 @@
   .pContent {
     --movies-per-slide: 6;
   }
+  .moviesPoster,
+  .genresNameList {
+    height: 210px;
+  }
+  .movieTitle {
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+  }
 }
 @media only screen and (max-width: 1300px) {
   .pContent {
     --movies-per-slide: 5;
+  }
+  .moviesPoster,
+  .genresNameList {
+    height: 190px;
   }
   .movieTitle {
     font-size: 0.8rem;
@@ -154,13 +167,27 @@
   }
 }
 @media only screen and (max-width: 1200px) {
+  .moviesPoster,
+  .genresNameList {
+    height: 190px;
+  }
+  .pContent {
+    padding-top: var(--spacing-md);
+  }
 }
 @media only screen and (max-width: 1100px) {
+  .contentWrapper {
+    padding-bottom: var(--spacing-lg);
+  }
   .pContent {
     --movies-per-slide: 4;
   }
+  .moviesPoster,
+  .genresNameList {
+    height: 170px;
+  }
   .movieTitle {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .genresNameList {
     gap: var(--spacing-md);
@@ -174,22 +201,78 @@
     --movies-per-slide: 3;
   }
   .genresText {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   .bookmarkLogo {
     width: 12px;
     height: 12px;
   }
+  .moviesPoster,
+  .genresNameList {
+    height: 170px;
+  }
 }
 @media only screen and (max-width: 600px) {
+  .contentWrapper {
+    padding-bottom: 0;
+  }
   .pContent {
     --movies-per-slide: 2;
   }
   .genresText {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
+  }
+  .btnBookmark {
+    padding: 0.4rem;
   }
   .bookmarkLogo {
     width: 10px;
     height: 10px;
+  }
+  .sliderBtn {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .pContent {
+    --movies-per-slide: 2;
+    padding-bottom: var(--spacing-md);
+  }
+  .genresText {
+    font-size: 0.7rem;
+  }
+  .movieTitle {
+    font-size: 0.7rem;
+  }
+  .btnBookmark {
+    padding: 0.4rem;
+  }
+  .bookmarkLogo {
+    width: 10px;
+    height: 10px;
+  }
+  .moviesPoster,
+  .genresNameList {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .pContent {
+    --movies-per-slide: 2;
+  }
+  .genresText {
+    font-size: 0.6rem;
+  }
+  .btnBookmark {
+    padding: 0.4rem;
+  }
+  .bookmarkLogo {
+    width: 10px;
+    height: 10px;
+  }
+  .moviesPoster,
+  .genresNameList {
+    height: 130px;
   }
 }

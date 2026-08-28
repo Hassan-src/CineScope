@@ -17,8 +17,8 @@ function BookmarkMovies() {
     <div className={styles.main}>
       {bookmarks.length !== 0 ? (
         bookmarks.map((movies) => (
-          <>
-            <div className={styles.mainCard} key={movies.id}>
+          <div key={movies.id}>
+            <div className={styles.mainCard}>
               <img
                 className={styles.posterImg}
                 src={
@@ -49,7 +49,7 @@ function BookmarkMovies() {
                 Delete
               </Button>
             </div>
-          </>
+          </div>
         ))
       ) : (
         <BookmarkEmpty />

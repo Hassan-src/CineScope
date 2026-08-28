@@ -7,6 +7,7 @@ import useMovieProvider from "../../context/useMovieProvider";
 import styles from "./MainMovies.module.css";
 
 function MainMovies() {
+  // Checking for the width and changing the number of movies shown
   function getMoviesPerSlide() {
     const width = window.innerWidth;
     if (width <= 1500) return 6;
@@ -16,10 +17,11 @@ function MainMovies() {
     if (width <= 600) return 2;
     return 7;
   }
-  const { popularMovies, upComingMovies } = useMovieProvider();
   const [moviesPerSlide, setMoviesPerSlide] = useState(getMoviesPerSlide());
+  const { popularMovies, upComingMovies } = useMovieProvider();
   const [popularStartIndex, setPopularStartIndex] = useState(0);
   const [upComingStartIndex, setUpComingStartIndex] = useState(0);
+  // Handling the resizing
   useEffect(() => {
     function handleResize() {
       setMoviesPerSlide(getMoviesPerSlide());
@@ -29,6 +31,7 @@ function MainMovies() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  // Changing the data base on the width
   const popularMoviesSet = popularMovies?.data.slice(
     popularStartIndex,
     popularStartIndex + moviesPerSlide,
@@ -37,6 +40,7 @@ function MainMovies() {
     upComingStartIndex,
     upComingStartIndex + moviesPerSlide,
   );
+  // Handling the totla shown base of the width
   function handleSlidePopularBtn() {
     setPopularStartIndex((prev) => {
       const next = prev + moviesPerSlide;

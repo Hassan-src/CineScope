@@ -4,6 +4,11 @@
   padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
   overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .main {
+    padding-bottom: var(--spacing-lg);
+    overflow: auto;
+  }
 }

@@ -2,6 +2,7 @@
   width: 100%;
   height: 4rem;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm)
     var(--spacing-md);

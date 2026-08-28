@@ -28,3 +28,37 @@
   padding: var(--spacing-xsm) var(--spacing-md);
   font-size: 1.8rem;
 }
+@media only screen and (max-width: 1500px) {
+  .header {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+}
+@media only screen and (max-width: 1200px) {
+  .header {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+}
+@media only screen and (max-width: 900px) {
+  .pMoviesHeader {
+    .moreBtn {
+      font-size: 0.7rem;
+    }
+  }
+  .header {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .header {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .header {
+    font-size: 0.8rem;
+  }
+}
