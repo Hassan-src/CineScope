@@ -8,6 +8,14 @@
 
 @font-face {
   font-family: "Inter";
+  src: url("./assets/fonts/Inter_18pt-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
   src: url("./assets/fonts/Inter_18pt-SemiBold.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
