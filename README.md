@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./docs/images/Banner.png" alt="Nimbus Weather App Banner" width="100%" />
+<img src="./docs/images/Banner.png" alt="Cinescope Banner" width="100%" />
 
 <br />
 
@@ -91,7 +91,7 @@ easier to maintain and extend.
 
 <img src="./docs/images/Desktop.png" alt="CineScope desktop preview" width="100%" />
 
-### Mobile
+### Mobile & Tablet
 
 <img src="./docs/images/mobile.png" alt="CineScope mobile preview" width="100%" />
 
@@ -294,7 +294,7 @@ Possible future improvements include:
 
 ## 📚 What I Learned
 
-Building Nimbus helped me strengthen my understanding of:
+Building cinescope helped me strengthen my understanding of:
 
 - ⚛️ React component architecture
 - 🪝 Custom React Hooks
@@ -394,7 +394,7 @@ Then open a Pull Request.
 
 ## 🐛 Issues & Suggestions
 
-If you find a bug or have a suggestion for improving Nimbus,
+If you find a bug or have a suggestion for improving Cinescope,
 feel free to open an issue on GitHub.
 
 **GitHub Repository:**
